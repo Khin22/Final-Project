@@ -1,0 +1,32 @@
+D:\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.deps.json
+D:\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.runtimeconfig.json
+D:\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.runtimeconfig.dev.json
+D:\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.dll
+D:\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.pdb
+D:\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.Views.dll
+D:\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.Views.pdb
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.csprojAssemblyReference.cache
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.csproj.CoreCompileInputs.cache
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.RazorAssemblyInfo.cache
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.RazorAssemblyInfo.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.AssemblyInfoInputs.cache
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.AssemblyInfo.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.TagHelpers.input.cache
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.TagHelpers.output.cache
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.RazorCoreGenerate.cache
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.RazorTargetAssemblyInfo.cache
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.RazorTargetAssemblyInfo.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.Views.pdb
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.dll
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.pdb
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.csproj.CopyComplete
