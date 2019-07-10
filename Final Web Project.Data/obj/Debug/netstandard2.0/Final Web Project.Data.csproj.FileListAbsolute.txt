@@ -1,0 +1,14 @@
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\bin\Debug\netstandard2.0\Final Web Project.Domain.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\obj\Debug\netstandard2.0\Final Web Project.Data.csprojAssemblyReference.cache
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\obj\Debug\netstandard2.0\Final Web Project.Data.csproj.CoreCompileInputs.cache
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\obj\Debug\netstandard2.0\Final Web Project.Data.AssemblyInfoInputs.cache
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\obj\Debug\netstandard2.0\Final Web Project.Data.AssemblyInfo.cs
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\bin\Debug\netstandard2.0\Final Web Project.Data.deps.json
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\bin\Debug\netstandard2.0\Final Web Project.Data.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\bin\Debug\netstandard2.0\Final Web Project.Data.pdb
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\bin\Debug\netstandard2.0\Final Web Project.Domain.pdb
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\obj\Debug\netstandard2.0\Final Web Project.Data.csproj.CopyComplete
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\obj\Debug\netstandard2.0\Final Web Project.Data.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\obj\Debug\netstandard2.0\Final Web Project.Data.pdb
