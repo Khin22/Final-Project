@@ -1,0 +1,12 @@
+D:\Final-Project\Final Web Project.DataModels\bin\Debug\netstandard2.0\Final Web Project.Domain.deps.json
+D:\Final-Project\Final Web Project.DataModels\bin\Debug\netstandard2.0\Final Web Project.Domain.dll
+D:\Final-Project\Final Web Project.DataModels\bin\Debug\netstandard2.0\Final Web Project.Domain.pdb
+D:\Final-Project\Final Web Project.DataModels\bin\Debug\netstandard2.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Final-Project\Final Web Project.DataModels\bin\Debug\netstandard2.0\Microsoft.Extensions.Identity.Stores.xml
+D:\Final-Project\Final Web Project.DataModels\obj\Debug\netstandard2.0\Final Web Project.Domain.csprojAssemblyReference.cache
+D:\Final-Project\Final Web Project.DataModels\obj\Debug\netstandard2.0\Final Web Project.Domain.csproj.CoreCompileInputs.cache
+D:\Final-Project\Final Web Project.DataModels\obj\Debug\netstandard2.0\Final Web Project.Domain.AssemblyInfoInputs.cache
+D:\Final-Project\Final Web Project.DataModels\obj\Debug\netstandard2.0\Final Web Project.Domain.AssemblyInfo.cs
+D:\Final-Project\Final Web Project.DataModels\obj\Debug\netstandard2.0\Final Web Project.Domain.csproj.CopyComplete
+D:\Final-Project\Final Web Project.DataModels\obj\Debug\netstandard2.0\Final Web Project.Domain.dll
+D:\Final-Project\Final Web Project.DataModels\obj\Debug\netstandard2.0\Final Web Project.Domain.pdb
