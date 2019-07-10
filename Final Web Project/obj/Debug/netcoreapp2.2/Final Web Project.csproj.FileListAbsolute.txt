@@ -30,3 +30,28 @@ D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.Vie
 D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.dll
 D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.pdb
 D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Final Web Project.csproj.CopyComplete
+D:\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.Data.dll
+D:\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.Data.pdb
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\AccessDenied.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\ConfirmEmail.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\ForgotPassword.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\ForgotPasswordConfirmation.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Lockout.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Login.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Logout.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\ChangePassword.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\SetPassword.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\_Layout.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Register.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\ResetPassword.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\ResetPasswordConfirmation.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\_ViewImports.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewImports.g.cshtml.cs
+D:\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.Domain.dll
+D:\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.Domain.pdb
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\CheckEmail.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\UnconfirmedEmail.g.cshtml.cs
+D:\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\Index.g.cshtml.cs
