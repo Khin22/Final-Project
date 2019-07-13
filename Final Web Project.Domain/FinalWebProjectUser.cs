@@ -7,7 +7,7 @@ namespace Final_Web_Project.DataModels
     {
         public FinalWebProjectUser()
         {
-
+            
         }
         public FinalWebProjectUserRole UserRole { get; set; }
     }

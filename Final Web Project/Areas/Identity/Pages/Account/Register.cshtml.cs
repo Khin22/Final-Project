@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using System.Linq;
 
 namespace Final_Web_Project.Areas.Identity.Pages.Account
 {
@@ -19,16 +20,20 @@ namespace Final_Web_Project.Areas.Identity.Pages.Account
         private readonly SignInManager<FinalWebProjectUser> _signInManager;
         private readonly UserManager<FinalWebProjectUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
+        private readonly RoleManager<FinalWebProjectUserRole> _roleManager;
+
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
             UserManager<FinalWebProjectUser> userManager,
             SignInManager<FinalWebProjectUser> signInManager,
             ILogger<RegisterModel> logger,
+            RoleManager<FinalWebProjectUserRole> roleManager,
             IEmailSender emailSender)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
             _logger = logger;
             _emailSender = emailSender;
         }
@@ -46,6 +51,10 @@ namespace Final_Web_Project.Areas.Identity.Pages.Account
             public string Email { get; set; }
 
             [Required]
+            [Display(Name = "Username")]
+            public string UserName { get; set; }
+
+            [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 3)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
@@ -57,20 +66,30 @@ namespace Final_Web_Project.Areas.Identity.Pages.Account
             public string ConfirmPassword { get; set; }
         }
 
-        public void OnGet(string returnUrl = null)
+        public async Task OnGetAsync(string returnUrl = null)
         {
             ReturnUrl = returnUrl;
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl = returnUrl ?? Url.Content("~/");
+            returnUrl = "/Identity/Account/Login";
             if (ModelState.IsValid)
             {
-                var user = new FinalWebProjectUser { UserName = Input.Email, Email = Input.Email };
+                var isRoot = _userManager.Users.Any();
+                var user = new FinalWebProjectUser { UserName = Input.UserName, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+                    if (!isRoot)
+                    {
+                        await _userManager.AddToRoleAsync(user, "Admin");
+                    }
+                    else
+                    {
+                        await _userManager.AddToRoleAsync(user, "User");
+                    }
+
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
