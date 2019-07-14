@@ -23,6 +23,22 @@ namespace Final_Web_Project.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Records",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    AlbumName = table.Column<string>(nullable: true),
+                    Artist = table.Column<string>(nullable: true),
+                    Price = table.Column<decimal>(nullable: false),
+                    Picture = table.Column<string>(nullable: true),
+                    Quantity = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Records", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -221,6 +237,9 @@ namespace Final_Web_Project.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Records");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

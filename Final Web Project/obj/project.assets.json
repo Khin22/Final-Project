@@ -4747,6 +4747,16 @@
         "runtime": {
           "bin/placeholder/Final Web Project.Domain.dll": {}
         }
+      },
+      "Final Web Project.InputModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Final Web Project.InputModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Final Web Project.InputModels.dll": {}
+        }
       }
     }
   },
@@ -12964,11 +12974,17 @@
       "type": "project",
       "path": "../Final Web Project.Domain/Final Web Project.Domain.csproj",
       "msbuildProject": "../Final Web Project.Domain/Final Web Project.Domain.csproj"
+    },
+    "Final Web Project.InputModels/1.0.0": {
+      "type": "project",
+      "path": "../Final Web Project.InputModels/Final Web Project.InputModels.csproj",
+      "msbuildProject": "../Final Web Project.InputModels/Final Web Project.InputModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Final Web Project.Data >= 1.0.0",
+      "Final Web Project.InputModels >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
@@ -13010,6 +13026,9 @@
           "projectReferences": {
             "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Data\\Final Web Project.Data.csproj": {
               "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Data\\Final Web Project.Data.csproj"
+            },
+            "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj": {
+              "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj"
             }
           }
         }

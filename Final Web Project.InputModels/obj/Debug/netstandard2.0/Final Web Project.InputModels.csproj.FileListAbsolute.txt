@@ -1,0 +1,12 @@
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Final Web Project.InputModels.deps.json
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Final Web Project.InputModels.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Final Web Project.InputModels.pdb
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Http.Features.xml
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\obj\Debug\netstandard2.0\Final Web Project.InputModels.csprojAssemblyReference.cache
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\obj\Debug\netstandard2.0\Final Web Project.InputModels.csproj.CoreCompileInputs.cache
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\obj\Debug\netstandard2.0\Final Web Project.InputModels.AssemblyInfoInputs.cache
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\obj\Debug\netstandard2.0\Final Web Project.InputModels.AssemblyInfo.cs
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\obj\Debug\netstandard2.0\Final Web Project.InputModels.csproj.CopyComplete
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\obj\Debug\netstandard2.0\Final Web Project.InputModels.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\obj\Debug\netstandard2.0\Final Web Project.InputModels.pdb

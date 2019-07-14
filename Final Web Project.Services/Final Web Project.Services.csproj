@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Final_Web_Project.Services</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Final Web Project.Data\Final Web Project.Data.csproj" />
+    <ProjectReference Include="..\Final Web Project.InputModels\Final Web Project.InputModels.csproj" />
+  </ItemGroup>
+
+</Project>

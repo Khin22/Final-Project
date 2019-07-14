@@ -17,11 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Final Web Project.Data\Final Web Project.Data.csproj" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <Folder Include="Areas\Administration\" />
+    <ProjectReference Include="..\Final Web Project.InputModels\Final Web Project.InputModels.csproj" />
   </ItemGroup>
 
 </Project>

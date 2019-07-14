@@ -1,0 +1,9 @@
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\bin\Debug\netstandard2.0\Final Web Project.ViewModels.deps.json
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\bin\Debug\netstandard2.0\Final Web Project.ViewModels.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\bin\Debug\netstandard2.0\Final Web Project.ViewModels.pdb
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\obj\Debug\netstandard2.0\Final Web Project.ViewModels.csprojAssemblyReference.cache
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\obj\Debug\netstandard2.0\Final Web Project.ViewModels.csproj.CoreCompileInputs.cache
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\obj\Debug\netstandard2.0\Final Web Project.ViewModels.AssemblyInfoInputs.cache
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\obj\Debug\netstandard2.0\Final Web Project.ViewModels.AssemblyInfo.cs
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\obj\Debug\netstandard2.0\Final Web Project.ViewModels.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\obj\Debug\netstandard2.0\Final Web Project.ViewModels.pdb

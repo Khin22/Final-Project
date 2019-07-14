@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Final_Web_Project.Data.Migrations
 {
     [DbContext(typeof(FinalWebProjectDbContext))]
-    [Migration("20190713080353_Initial")]
+    [Migration("20190714102001_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -98,6 +98,26 @@ namespace Final_Web_Project.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
+                });
+
+            modelBuilder.Entity("Final_Web_Project.Domain.Record", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("AlbumName");
+
+                    b.Property<string>("Artist");
+
+                    b.Property<string>("Picture");
+
+                    b.Property<decimal>("Price");
+
+                    b.Property<int>("Quantity");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Records");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

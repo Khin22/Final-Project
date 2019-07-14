@@ -99,3 +99,6 @@ D:\Final-Project-Without-Sender\Final-Project\Final Web Project\obj\Debug\netcor
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Error.g.cshtml.cs
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.g.cshtml.cs
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewImports.g.cshtml.cs
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.InputModels.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.InputModels.pdb
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Record\Create.g.cshtml.cs

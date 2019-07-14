@@ -98,6 +98,26 @@ namespace Final_Web_Project.Data.Migrations
                     b.ToTable("AspNetRoles");
                 });
 
+            modelBuilder.Entity("Final_Web_Project.Domain.Record", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("AlbumName");
+
+                    b.Property<string>("Artist");
+
+                    b.Property<string>("Picture");
+
+                    b.Property<decimal>("Price");
+
+                    b.Property<int>("Quantity");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Records");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")

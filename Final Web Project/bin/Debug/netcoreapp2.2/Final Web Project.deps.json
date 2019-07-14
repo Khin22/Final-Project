@@ -733,6 +733,14 @@
           "Final Web Project.Domain.dll": {}
         }
       },
+      "Final Web Project.InputModels/1.0.0": {
+        "runtime": {
+          "Final Web Project.InputModels.dll": {}
+        },
+        "compile": {
+          "Final Web Project.InputModels.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "dependencies": {
           "Newtonsoft.Json": "11.0.2",
@@ -3917,6 +3925,11 @@
       "sha512": ""
     },
     "Final Web Project.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Final Web Project.InputModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
