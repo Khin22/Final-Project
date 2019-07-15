@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Final_Web_Project.Data.Migrations
 {
     [DbContext(typeof(FinalWebProjectDbContext))]
-    [Migration("20190714102001_Initial")]
+    [Migration("20190715110339_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -105,9 +105,11 @@ namespace Final_Web_Project.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("AlbumName");
+                    b.Property<string>("AlbumName")
+                        .IsRequired();
 
-                    b.Property<string>("Artist");
+                    b.Property<string>("Artist")
+                        .IsRequired();
 
                     b.Property<string>("Picture");
 

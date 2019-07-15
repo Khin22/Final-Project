@@ -10,7 +10,8 @@
       "Final Web Project.InputModels/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
-          "Microsoft.AspNetCore.Http.Features": "2.2.0.0"
+          "Microsoft.AspNetCore.Http.Features": "2.2.0.0",
+          "System.ComponentModel.Annotations": "4.2.0.0"
         },
         "runtime": {
           "Final Web Project.InputModels.dll": {}
@@ -27,6 +28,14 @@
           "Microsoft.AspNetCore.Http.Features.dll": {
             "assemblyVersion": "2.2.0.0",
             "fileVersion": "2.2.0.18316"
+          }
+        }
+      },
+      "System.ComponentModel.Annotations/4.2.0.0": {
+        "runtime": {
+          "System.ComponentModel.Annotations.dll": {
+            "assemblyVersion": "4.2.0.0",
+            "fileVersion": "4.6.26515.6"
           }
         }
       }
@@ -53,6 +62,11 @@
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Http.Features/2.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.ComponentModel.Annotations/4.2.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

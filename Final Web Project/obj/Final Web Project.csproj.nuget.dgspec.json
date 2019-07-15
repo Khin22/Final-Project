@@ -186,6 +186,71 @@
         }
       }
     },
+    "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services\\Final Web Project.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services\\Final Web Project.Services.csproj",
+        "projectName": "Final Web Project.Services",
+        "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services\\Final Web Project.Services.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Data\\Final Web Project.Data.csproj": {
+                "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Data\\Final Web Project.Data.csproj"
+              },
+              "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj": {
+                "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
     "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project\\Final Web Project.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -219,6 +284,9 @@
               },
               "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj": {
                 "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj"
+              },
+              "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services\\Final Web Project.Services.csproj": {
+                "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services\\Final Web Project.Services.csproj"
               }
             }
           }

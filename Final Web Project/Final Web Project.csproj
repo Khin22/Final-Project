@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Final Web Project.Data\Final Web Project.Data.csproj" />
     <ProjectReference Include="..\Final Web Project.InputModels\Final Web Project.InputModels.csproj" />
+    <ProjectReference Include="..\Final Web Project.Services\Final Web Project.Services.csproj" />
   </ItemGroup>
 
 </Project>

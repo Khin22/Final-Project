@@ -27,8 +27,8 @@ namespace Final_Web_Project.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
-                    AlbumName = table.Column<string>(nullable: true),
-                    Artist = table.Column<string>(nullable: true),
+                    AlbumName = table.Column<string>(nullable: false),
+                    Artist = table.Column<string>(nullable: false),
                     Price = table.Column<decimal>(nullable: false),
                     Picture = table.Column<string>(nullable: true),
                     Quantity = table.Column<int>(nullable: false)

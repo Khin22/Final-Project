@@ -103,9 +103,11 @@ namespace Final_Web_Project.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("AlbumName");
+                    b.Property<string>("AlbumName")
+                        .IsRequired();
 
-                    b.Property<string>("Artist");
+                    b.Property<string>("Artist")
+                        .IsRequired();
 
                     b.Property<string>("Picture");
 
