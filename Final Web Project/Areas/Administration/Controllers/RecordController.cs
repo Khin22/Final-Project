@@ -30,12 +30,17 @@ namespace Final_Web_Project.Areas.Administration.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(RecordCreateInputModel recordCreateInputModel)
         {
-            RecordCreateInputModel recordCreate = new RecordCreateInputModel
+            if (!this.ModelState.IsValid)
+            {
+                return this.View();
+            }
+                RecordCreateInputModel recordCreate = new RecordCreateInputModel
             {
                 AlbumName = recordCreateInputModel.AlbumName,
                 Artist = recordCreateInputModel.Artist,
                 Price = recordCreateInputModel.Price,
-                Quantity = recordCreateInputModel.Quantity
+                Quantity = recordCreateInputModel.Quantity,
+                Picture = null
             };
 
             await this.recordSerice.Create(recordCreate);
