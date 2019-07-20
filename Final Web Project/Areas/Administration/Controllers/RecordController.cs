@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Final_Web_Project.Data;
 using Final_Web_Project.InputModels;
 using Final_Web_Project.Services;
+using Final_Web_Project.Services.ServiceModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Final_Web_Project.Areas.Administration.Controllers
@@ -14,11 +15,13 @@ namespace Final_Web_Project.Areas.Administration.Controllers
     {
         private readonly IRecordSerice recordSerice;
         private readonly FinalWebProjectDbContext context;
+        private readonly ICloudinaryService cloudinaryService;
 
-        public RecordController(IRecordSerice recordSerice, FinalWebProjectDbContext context)
+        public RecordController(IRecordSerice recordSerice, FinalWebProjectDbContext context, ICloudinaryService cloudinaryService)
         {
             this.recordSerice = recordSerice;
             this.context = context;
+            this.cloudinaryService = cloudinaryService;
         }
 
         [HttpGet(Name = "Create")]
@@ -34,13 +37,16 @@ namespace Final_Web_Project.Areas.Administration.Controllers
             {
                 return this.View();
             }
-                RecordCreateInputModel recordCreate = new RecordCreateInputModel
+
+            string pictureUrl = await this.cloudinaryService.UploadPictureAsync(recordCreateInputModel.Picture, recordCreateInputModel.AlbumName);
+
+            RecordServiceModel recordCreate = new RecordServiceModel
             {
                 AlbumName = recordCreateInputModel.AlbumName,
                 Artist = recordCreateInputModel.Artist,
                 Price = recordCreateInputModel.Price,
                 Quantity = recordCreateInputModel.Quantity,
-                Picture = null
+                Picture = pictureUrl
             };
 
             await this.recordSerice.Create(recordCreate);

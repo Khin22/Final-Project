@@ -16,6 +16,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Final_Web_Project.DataModels;
 using Final_Web_Project.Services;
 using System.Globalization;
+using CloudinaryDotNet;
 
 namespace Final_Web_Project
 {
@@ -41,10 +42,20 @@ namespace Final_Web_Project
             services.AddDbContext<FinalWebProjectDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddIdentity<FinalWebProjectUser, FinalWebProjectUserRole>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<FinalWebProjectDbContext>()
                 .AddDefaultTokenProviders();
+
+            Account cloudinaryCredentials = new Account(
+                this.Configuration["Cloudinary:CloudName"],
+                this.Configuration["Cloudinary:ApiKey"],
+                this.Configuration["Cloudinary:ApiSecret"]);
+
+            Cloudinary cloudinary = new Cloudinary(cloudinaryCredentials);
+
+            services.AddSingleton(cloudinary);
 
             services.Configure<IdentityOptions>(options =>
             {
@@ -62,6 +73,7 @@ namespace Final_Web_Project
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddTransient<IRecordSerice, RecordService>();
+            services.AddTransient<ICloudinaryService, CloudinaryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -5,13 +5,35 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Final_Web_Project.Models;
+using Final_Web_Project.Services;
+using Final_Web_Project.ViewModels.Home.Index;
+using Microsoft.EntityFrameworkCore;
 
 namespace Final_Web_Project.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly IRecordSerice recordSerice;
+
+        public HomeController(IRecordSerice recordSerice)
         {
+            this.recordSerice = recordSerice;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            if (this.User.Identity.IsAuthenticated)
+            {
+                List<RecordHomeViewModel> records = await this.recordSerice.GetAllRecords()
+                    .Select(record => new RecordHomeViewModel
+                    {
+                        AlbumName = record.AlbumName,
+                        Artist = record.Artist,
+                        Price = record.Price,
+                        Picture = record.Picture
+                    }).ToListAsync();
+            }
+
             return View();
         }
 

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "cf09a37f93462d9a84b93f4e60bb0b5dae24ba22"
+    "signature": "d0bdc9c859f7c0225b236ff8aa462359e457d02b"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.2": {
       "Final Web Project/1.0.0": {
         "dependencies": {
+          "CloudinaryDotNet": "1.8.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
@@ -34,6 +35,20 @@
         },
         "compile": {
           "Final Web Project.dll": {}
+        }
+      },
+      "CloudinaryDotNet/1.8.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard1.3/CloudinaryDotNet.dll": {
+            "assemblyVersion": "1.8.0.0",
+            "fileVersion": "1.8.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.3/CloudinaryDotNet.dll": {}
         }
       },
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
@@ -743,6 +758,7 @@
       },
       "Final Web Project.Services/1.0.0": {
         "dependencies": {
+          "CloudinaryDotNet": "1.8.0",
           "Final Web Project.Data": "1.0.0",
           "Final Web Project.InputModels": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0"
@@ -752,6 +768,14 @@
         },
         "compile": {
           "Final Web Project.Services.dll": {}
+        }
+      },
+      "Final Web Project.ViewModels/1.0.0": {
+        "runtime": {
+          "Final Web Project.ViewModels.dll": {}
+        },
+        "compile": {
+          "Final Web Project.ViewModels.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3652,6 +3676,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "CloudinaryDotNet/1.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jrxUPvVmdGL+8wDGQn4rBrRh7jKPDTqUW1kBj+fwmGdiMW5aBArQ3P2ErnYA84AQgvJnb2JwP3WTlwD2Yc/kdA==",
+      "path": "cloudinarydotnet/1.8.0",
+      "hashPath": "cloudinarydotnet.1.8.0.nupkg.sha512"
+    },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",
       "serviceable": true,
@@ -3948,6 +3979,11 @@
       "sha512": ""
     },
     "Final Web Project.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Final Web Project.ViewModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -103,3 +103,5 @@ D:\Final-Project-Without-Sender\Final-Project\Final Web Project\bin\Debug\netcor
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Record\Create.g.cshtml.cs
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.Services.dll
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.Services.pdb
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.ViewModels.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.ViewModels.pdb
