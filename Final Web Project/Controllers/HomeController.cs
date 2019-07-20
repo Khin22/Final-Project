@@ -20,6 +20,7 @@ namespace Final_Web_Project.Controllers
             this.recordSerice = recordSerice;
         }
 
+        
         public async Task<IActionResult> Index()
         {
             if (this.User.Identity.IsAuthenticated)
@@ -32,6 +33,8 @@ namespace Final_Web_Project.Controllers
                         Price = record.Price,
                         Picture = record.Picture
                     }).ToListAsync();
+
+                return this.View(records);
             }
 
             return View();
