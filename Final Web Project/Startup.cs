@@ -17,6 +17,11 @@ using Final_Web_Project.DataModels;
 using Final_Web_Project.Services;
 using System.Globalization;
 using CloudinaryDotNet;
+using Final_Web_Project.Services.Mapping;
+using Final_Web_Project.InputModels;
+using System.Reflection;
+using Final_Web_Project.ViewModels.Home.Index;
+using Final_Web_Project.Services.ServiceModels;
 
 namespace Final_Web_Project
 {
@@ -79,6 +84,13 @@ namespace Final_Web_Project
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            AutoMapperConfig.RegisterMappings
+                (
+                    typeof(RecordCreateInputModel).GetTypeInfo().Assembly,
+                    typeof(RecordHomeViewModel).GetTypeInfo().Assembly,
+                    typeof(RecordServiceModel).GetTypeInfo().Assembly
+                );
+
             var cultureInfo = new CultureInfo("en-US");
             cultureInfo.NumberFormat.NumberGroupSeparator = ",";
 

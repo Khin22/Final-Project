@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "AutoMapper/8.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
       "CloudinaryDotNet/1.8.0": {
         "type": "package",
         "dependencies": {
@@ -4753,6 +4766,9 @@
       "Final Web Project.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Final Web Project.Services.Mapping": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Final Web Project.Domain.dll": {}
         },
@@ -4763,6 +4779,10 @@
       "Final Web Project.InputModels/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Final Web Project.Services": "1.0.0",
+          "Final Web Project.Services.Mapping": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Final Web Project.InputModels.dll": {}
         },
@@ -4776,7 +4796,7 @@
         "dependencies": {
           "CloudinaryDotNet": "1.8.0",
           "Final Web Project.Data": "1.0.0",
-          "Final Web Project.InputModels": "1.0.0",
+          "Final Web Project.Services.Mapping": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0"
         },
         "compile": {
@@ -4784,6 +4804,19 @@
         },
         "runtime": {
           "bin/placeholder/Final Web Project.Services.dll": {}
+        }
+      },
+      "Final Web Project.Services.Mapping/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "AutoMapper": "8.1.1"
+        },
+        "compile": {
+          "bin/placeholder/Final Web Project.Services.Mapping.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Final Web Project.Services.Mapping.dll": {}
         }
       },
       "Final Web Project.ViewModels/1.0.0": {
@@ -4799,6 +4832,23 @@
     }
   },
   "libraries": {
+    "AutoMapper/8.1.1": {
+      "sha512": "GKBliBukkLG0z/U0T4Jy+yEpr5bKDImQ9nEy/T8jqNulwNkWDjiEWa9TL4yCxIhleDbmVmw2xYSaJ3Eb2OcSUg==",
+      "type": "package",
+      "path": "automapper/8.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.8.1.1.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net461/AutoMapper.dll",
+        "lib/net461/AutoMapper.pdb",
+        "lib/net461/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.pdb",
+        "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
     "CloudinaryDotNet/1.8.0": {
       "sha512": "jrxUPvVmdGL+8wDGQn4rBrRh7jKPDTqUW1kBj+fwmGdiMW5aBArQ3P2ErnYA84AQgvJnb2JwP3WTlwD2Yc/kdA==",
       "type": "package",
@@ -13040,6 +13090,11 @@
       "path": "../Final Web Project.Services/Final Web Project.Services.csproj",
       "msbuildProject": "../Final Web Project.Services/Final Web Project.Services.csproj"
     },
+    "Final Web Project.Services.Mapping/1.0.0": {
+      "type": "project",
+      "path": "../Final Web Project.Services.Mapping/Final Web Project.Services.Mapping.csproj",
+      "msbuildProject": "../Final Web Project.Services.Mapping/Final Web Project.Services.Mapping.csproj"
+    },
     "Final Web Project.ViewModels/1.0.0": {
       "type": "project",
       "path": "../Final Web Project.ViewModels/Final Web Project.ViewModels.csproj",
@@ -13048,10 +13103,12 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "AutoMapper >= 8.1.1",
       "CloudinaryDotNet >= 1.8.0",
       "Final Web Project.Data >= 1.0.0",
       "Final Web Project.InputModels >= 1.0.0",
       "Final Web Project.Services >= 1.0.0",
+      "Final Web Project.Services.Mapping >= 1.0.0",
       "Final Web Project.ViewModels >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
@@ -13098,6 +13155,9 @@
             "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj": {
               "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj"
             },
+            "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj": {
+              "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj"
+            },
             "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services\\Final Web Project.Services.csproj": {
               "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services\\Final Web Project.Services.csproj"
             },
@@ -13116,6 +13176,10 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[8.1.1, )"
+          },
           "CloudinaryDotNet": {
             "target": "Package",
             "version": "[1.8.0, )"

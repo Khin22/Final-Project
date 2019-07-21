@@ -105,7 +105,11 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj": {
+                "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -132,14 +136,14 @@
         }
       }
     },
-    "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj": {
+    "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj",
-        "projectName": "Final Web Project.InputModels",
-        "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj",
+        "projectUniqueName": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj",
+        "projectName": "Final Web Project.Services.Mapping",
+        "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\obj\\",
+        "outputPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -171,6 +175,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -217,8 +225,8 @@
               "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Data\\Final Web Project.Data.csproj": {
                 "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Data\\Final Web Project.Data.csproj"
               },
-              "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj": {
-                "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj"
+              "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj": {
+                "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj"
               }
             }
           }

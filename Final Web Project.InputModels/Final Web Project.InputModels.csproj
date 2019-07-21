@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Final Web Project.Services.Mapping\Final Web Project.Services.Mapping.csproj" />
+    <ProjectReference Include="..\Final Web Project.Services\Final Web Project.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Microsoft.AspNetCore.Http.Features">
       <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.http.features\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
     </Reference>

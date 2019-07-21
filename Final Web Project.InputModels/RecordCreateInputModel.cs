@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Final_Web_Project.Services.Mapping;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.ComponentModel.DataAnnotations;
+using Final_Web_Project.Services.ServiceModels;
 
 namespace Final_Web_Project.InputModels
 {
-    public class RecordCreateInputModel
+    public class RecordCreateInputModel : IMapTo<RecordServiceModel>
     {
         [Required]
         public string AlbumName { get; set; }

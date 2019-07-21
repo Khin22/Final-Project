@@ -12,3 +12,5 @@ D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\bin\Debug\n
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\obj\Debug\netstandard2.0\Final Web Project.Data.csproj.CopyComplete
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\obj\Debug\netstandard2.0\Final Web Project.Data.dll
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\obj\Debug\netstandard2.0\Final Web Project.Data.pdb
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\bin\Debug\netstandard2.0\Final Web Project.Services.Mapping.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Data\bin\Debug\netstandard2.0\Final Web Project.Services.Mapping.pdb

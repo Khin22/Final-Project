@@ -40,14 +40,9 @@ namespace Final_Web_Project.Areas.Administration.Controllers
 
             string pictureUrl = await this.cloudinaryService.UploadPictureAsync(recordCreateInputModel.Picture, recordCreateInputModel.AlbumName);
 
-            RecordServiceModel recordCreate = new RecordServiceModel
-            {
-                AlbumName = recordCreateInputModel.AlbumName,
-                Artist = recordCreateInputModel.Artist,
-                Price = recordCreateInputModel.Price,
-                Quantity = recordCreateInputModel.Quantity,
-                Picture = pictureUrl
-            };
+            RecordServiceModel recordCreate = AutoMapper.Mapper.Map<RecordServiceModel>(recordCreateInputModel);
+
+            recordCreate.Picture = pictureUrl;
 
             await this.recordSerice.Create(recordCreate);
 

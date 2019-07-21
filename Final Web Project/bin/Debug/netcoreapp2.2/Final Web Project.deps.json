@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "d0bdc9c859f7c0225b236ff8aa462359e457d02b"
+    "signature": "f9d11cc857e984a590282933214edb7b2d160974"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.2": {
       "Final Web Project/1.0.0": {
         "dependencies": {
+          "AutoMapper": "8.1.1",
           "CloudinaryDotNet": "1.8.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
@@ -35,6 +36,21 @@
         },
         "compile": {
           "Final Web Project.dll": {}
+        }
+      },
+      "AutoMapper/8.1.1": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {
+            "assemblyVersion": "8.1.1.0",
+            "fileVersion": "8.1.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
         }
       },
       "CloudinaryDotNet/1.8.0": {
@@ -741,6 +757,9 @@
         }
       },
       "Final Web Project.Domain/1.0.0": {
+        "dependencies": {
+          "Final Web Project.Services.Mapping": "1.0.0"
+        },
         "runtime": {
           "Final Web Project.Domain.dll": {}
         },
@@ -749,6 +768,10 @@
         }
       },
       "Final Web Project.InputModels/1.0.0": {
+        "dependencies": {
+          "Final Web Project.Services": "1.0.0",
+          "Final Web Project.Services.Mapping": "1.0.0"
+        },
         "runtime": {
           "Final Web Project.InputModels.dll": {}
         },
@@ -760,7 +783,7 @@
         "dependencies": {
           "CloudinaryDotNet": "1.8.0",
           "Final Web Project.Data": "1.0.0",
-          "Final Web Project.InputModels": "1.0.0",
+          "Final Web Project.Services.Mapping": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0"
         },
         "runtime": {
@@ -768,6 +791,17 @@
         },
         "compile": {
           "Final Web Project.Services.dll": {}
+        }
+      },
+      "Final Web Project.Services.Mapping/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "8.1.1"
+        },
+        "runtime": {
+          "Final Web Project.Services.Mapping.dll": {}
+        },
+        "compile": {
+          "Final Web Project.Services.Mapping.dll": {}
         }
       },
       "Final Web Project.ViewModels/1.0.0": {
@@ -3676,6 +3710,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AutoMapper/8.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GKBliBukkLG0z/U0T4Jy+yEpr5bKDImQ9nEy/T8jqNulwNkWDjiEWa9TL4yCxIhleDbmVmw2xYSaJ3Eb2OcSUg==",
+      "path": "automapper/8.1.1",
+      "hashPath": "automapper.8.1.1.nupkg.sha512"
+    },
     "CloudinaryDotNet/1.8.0": {
       "type": "package",
       "serviceable": true,
@@ -3979,6 +4020,11 @@
       "sha512": ""
     },
     "Final Web Project.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Final Web Project.Services.Mapping/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

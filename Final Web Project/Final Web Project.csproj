@@ -9,6 +9,7 @@
 
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
     <PackageReference Include="CloudinaryDotNet" Version="1.8.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
@@ -19,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Final Web Project.Data\Final Web Project.Data.csproj" />
     <ProjectReference Include="..\Final Web Project.InputModels\Final Web Project.InputModels.csproj" />
+    <ProjectReference Include="..\Final Web Project.Services.Mapping\Final Web Project.Services.Mapping.csproj" />
     <ProjectReference Include="..\Final Web Project.Services\Final Web Project.Services.csproj" />
     <ProjectReference Include="..\Final Web Project.ViewModels\Final Web Project.ViewModels.csproj" />
   </ItemGroup>

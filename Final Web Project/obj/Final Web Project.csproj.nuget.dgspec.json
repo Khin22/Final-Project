@@ -105,7 +105,11 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj": {
+                "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -159,6 +163,67 @@
         },
         "frameworks": {
           "netstandard2.0": {
+            "projectReferences": {
+              "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj": {
+                "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj"
+              },
+              "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services\\Final Web Project.Services.csproj": {
+                "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services\\Final Web Project.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj",
+        "projectName": "Final Web Project.Services.Mapping",
+        "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
             "projectReferences": {}
           }
         },
@@ -171,6 +236,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -217,8 +286,8 @@
               "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Data\\Final Web Project.Data.csproj": {
                 "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Data\\Final Web Project.Data.csproj"
               },
-              "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj": {
-                "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj"
+              "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj": {
+                "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj"
               }
             }
           }
@@ -343,6 +412,9 @@
               "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj": {
                 "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.InputModels\\Final Web Project.InputModels.csproj"
               },
+              "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj": {
+                "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj"
+              },
               "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services\\Final Web Project.Services.csproj": {
                 "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services\\Final Web Project.Services.csproj"
               },
@@ -361,6 +433,10 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
             "CloudinaryDotNet": {
               "target": "Package",
               "version": "[1.8.0, )"

@@ -1,8 +1,6 @@
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Final Web Project.InputModels.deps.json
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Final Web Project.InputModels.dll
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Final Web Project.InputModels.pdb
-D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll
-D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Http.Features.xml
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\obj\Debug\netstandard2.0\Final Web Project.InputModels.csprojAssemblyReference.cache
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\obj\Debug\netstandard2.0\Final Web Project.InputModels.csproj.CoreCompileInputs.cache
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\obj\Debug\netstandard2.0\Final Web Project.InputModels.AssemblyInfoInputs.cache
@@ -10,5 +8,11 @@ D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\obj\
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\obj\Debug\netstandard2.0\Final Web Project.InputModels.csproj.CopyComplete
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\obj\Debug\netstandard2.0\Final Web Project.InputModels.dll
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\obj\Debug\netstandard2.0\Final Web Project.InputModels.pdb
-D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.dll
-D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.xml
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Final Web Project.Data.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Final Web Project.Domain.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Final Web Project.Services.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Final Web Project.Services.Mapping.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Final Web Project.Services.Mapping.pdb
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Final Web Project.Services.pdb
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Final Web Project.Data.pdb
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.InputModels\bin\Debug\netstandard2.0\Final Web Project.Domain.pdb
