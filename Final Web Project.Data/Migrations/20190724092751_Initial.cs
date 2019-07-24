@@ -23,19 +23,16 @@ namespace Final_Web_Project.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Records",
+                name: "Genres",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
-                    AlbumName = table.Column<string>(nullable: false),
-                    Artist = table.Column<string>(nullable: false),
-                    Price = table.Column<decimal>(nullable: false),
-                    Picture = table.Column<string>(nullable: true),
-                    Quantity = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Records", x => x.Id);
+                    table.PrimaryKey("PK_Genres", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -89,6 +86,29 @@ namespace Final_Web_Project.Data.Migrations
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Records",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    AlbumName = table.Column<string>(nullable: false),
+                    Artist = table.Column<string>(nullable: false),
+                    Price = table.Column<decimal>(nullable: false),
+                    GenreId = table.Column<int>(nullable: false),
+                    Picture = table.Column<string>(nullable: true),
+                    Quantity = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Records", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Records_Genres_GenreId",
+                        column: x => x.GenreId,
+                        principalTable: "Genres",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -219,6 +239,11 @@ namespace Final_Web_Project.Data.Migrations
                 name: "IX_AspNetUsers_UserRoleId",
                 table: "AspNetUsers",
                 column: "UserRoleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Records_GenreId",
+                table: "Records",
+                column: "GenreId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -243,6 +268,9 @@ namespace Final_Web_Project.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Genres");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

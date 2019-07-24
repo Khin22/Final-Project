@@ -107,3 +107,4 @@ D:\Final-Project-Without-Sender\Final-Project\Final Web Project\bin\Debug\netcor
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.ViewModels.pdb
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.Services.Mapping.dll
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project\bin\Debug\netcoreapp2.2\Final Web Project.Services.Mapping.pdb
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Record\Genre\Create.g.cshtml.cs

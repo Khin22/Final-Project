@@ -9,6 +9,10 @@ namespace Final_Web_Project.Services
 {
     public interface IRecordSerice
     {
+        IQueryable<GenreServiceModel> GetAllGenres();
+
+        Task<bool> CreateGenre(GenreServiceModel GenreServiceModel);
+
         Task<bool> Create(RecordServiceModel recordServiceModel);
 
         IQueryable<RecordServiceModel> GetAllRecords();

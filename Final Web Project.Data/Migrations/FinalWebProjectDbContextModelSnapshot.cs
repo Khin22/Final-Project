@@ -98,6 +98,19 @@ namespace Final_Web_Project.Data.Migrations
                     b.ToTable("AspNetRoles");
                 });
 
+            modelBuilder.Entity("Final_Web_Project.Domain.Genre", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Genres");
+                });
+
             modelBuilder.Entity("Final_Web_Project.Domain.Record", b =>
                 {
                     b.Property<string>("Id")
@@ -109,6 +122,8 @@ namespace Final_Web_Project.Data.Migrations
                     b.Property<string>("Artist")
                         .IsRequired();
 
+                    b.Property<int>("GenreId");
+
                     b.Property<string>("Picture");
 
                     b.Property<decimal>("Price");
@@ -116,6 +131,8 @@ namespace Final_Web_Project.Data.Migrations
                     b.Property<int>("Quantity");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("GenreId");
 
                     b.ToTable("Records");
                 });
@@ -211,6 +228,14 @@ namespace Final_Web_Project.Data.Migrations
                     b.HasOne("Final_Web_Project.DataModels.FinalWebProjectUserRole", "UserRole")
                         .WithMany()
                         .HasForeignKey("UserRoleId");
+                });
+
+            modelBuilder.Entity("Final_Web_Project.Domain.Record", b =>
+                {
+                    b.HasOne("Final_Web_Project.Domain.Genre", "Genre")
+                        .WithMany()
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

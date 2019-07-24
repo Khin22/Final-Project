@@ -12,6 +12,8 @@ namespace Final_Web_Project.Data
     {
         public DbSet<Record> Records { get; set; }
 
+        public DbSet<Genre> Genres { get; set; }
+
         public FinalWebProjectDbContext(DbContextOptions<FinalWebProjectDbContext> options) : base(options)
         {
 

@@ -1,4 +1,5 @@
 ﻿@model Final_Web_Project.InputModels.RecordCreateInputModel
+@using Final_Web_Project.ViewModels
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
@@ -69,6 +70,20 @@
                    asp-for="Quantity">
             <span asp-validation-for="Quantity" class="text-danger"></span>
         </div>
+    </div>
+    <hr class="hr-2 bg-primary mt-4">
+    <div class="form-group mx-auto w-45">
+        <div class="d-flex justify-content-center">
+            <label asp-for="Genre" class="text-primary h5">Genre</label>
+        </div>
+        <select class="form-control text-primary" id="type" asp-for="Genre">
+            <option selected disabled>--- Select Genre ---</option>
+            @foreach (var type in (IEnumerable<GenreCreateViewModel>)this.ViewData["types"])
+            {
+                <option value="@type.Name">@type.Name</option>
+            }
+        </select>
+        <span asp-validation-for="Genre" class="text-danger"></span>
     </div>
     <hr class="hr-2 bg-primary mt-4">
     <div class="d-flex justify-content-center mt-3">

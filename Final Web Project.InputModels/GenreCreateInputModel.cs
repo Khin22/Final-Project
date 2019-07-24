@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Final_Web_Project.Domain
+namespace Final_Web_Project.InputModels
 {
-    public class ProductType
+    public class GenreCreateInputModel
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
     }
 }

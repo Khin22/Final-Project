@@ -19,5 +19,9 @@ namespace Final_Web_Project.Services.ServiceModels
         public string Picture { get; set; }
 
         public int Quantity { get; set; }
+
+        public int GenreId { get; set; }
+
+        public GenreServiceModel Genre { get; set; }
     }
 }

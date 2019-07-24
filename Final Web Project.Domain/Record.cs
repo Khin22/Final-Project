@@ -21,6 +21,10 @@ namespace Final_Web_Project.Domain
         [Display(Name = "Price")]
         public decimal Price { get; set; }
 
+        public int GenreId { get; set; }
+
+        public Genre Genre { get; set; }
+
         public string Picture { get; set; }
 
         public int Quantity { get; set; }

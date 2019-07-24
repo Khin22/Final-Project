@@ -7,7 +7,9 @@ using Final_Web_Project.Data;
 using Final_Web_Project.InputModels;
 using Final_Web_Project.Services;
 using Final_Web_Project.Services.ServiceModels;
+using Final_Web_Project.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Final_Web_Project.Areas.Administration.Controllers
 {
@@ -24,9 +26,36 @@ namespace Final_Web_Project.Areas.Administration.Controllers
             this.cloudinaryService = cloudinaryService;
         }
 
+        [HttpGet("/Administration/Record/Genre/Create")]
+        public async Task<IActionResult> CreateType()
+        {
+            return this.View("Genre/Create");
+        }
+
+        [HttpPost("/Administration/Record/Genre/Create")]
+        public async Task<IActionResult> CreateType(GenreCreateInputModel productTypeCreateInputModel)
+        {
+            GenreServiceModel genreServiceModel = new GenreServiceModel
+            {
+                Name = productTypeCreateInputModel.Name
+            };
+
+            await this.recordSerice.CreateGenre(genreServiceModel);
+
+            return this.Redirect("/");
+        }
+
         [HttpGet(Name = "Create")]
         public async Task<IActionResult> Create()
         {
+            var allGenres = await this.recordSerice.GetAllGenres().ToListAsync();
+
+            this.ViewData["types"] = allGenres.Select(genre => new GenreCreateViewModel
+            {
+                Name = genre.Name
+            })
+                .ToList();
+
             return this.View();
         }
 
@@ -35,6 +64,14 @@ namespace Final_Web_Project.Areas.Administration.Controllers
         {
             if (!this.ModelState.IsValid)
             {
+                var allGenres = await this.recordSerice.GetAllGenres().ToListAsync();
+
+                this.ViewData["types"] = allGenres.Select(genre => new GenreCreateViewModel
+                {
+                    Name = genre.Name
+                })
+                    .ToList();
+
                 return this.View();
             }
 

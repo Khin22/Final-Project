@@ -22,17 +22,40 @@ namespace Final_Web_Project.Services
 
         public async Task<bool> Create(RecordServiceModel recordServiceModel)
         {
+            Genre GenreFromDb =
+                finalWebProjectDbContext.Genres
+                .SingleOrDefault(productType => productType.Name == recordServiceModel.Genre.Name);
+
             Record record = AutoMapper.Mapper.Map<Record>(recordServiceModel);
+            record.Genre = GenreFromDb;
 
             finalWebProjectDbContext.Records.Add(record);
-            await finalWebProjectDbContext.SaveChangesAsync();
+            int result = await finalWebProjectDbContext.SaveChangesAsync();
 
-            return true;
+            return result > 0;
         }
-
         public IQueryable<RecordServiceModel> GetAllRecords()
         {
             return this.finalWebProjectDbContext.Records.To<RecordServiceModel>();
         }
+
+        public async Task<bool> CreateGenre(GenreServiceModel GenreServiceModel)
+        {
+            Genre genre = new Genre
+            {
+                Name = GenreServiceModel.Name
+            };
+
+            finalWebProjectDbContext.Genres.Add(genre);
+            int result = await finalWebProjectDbContext.SaveChangesAsync();
+
+            return result > 0;
+        }
+
+        public IQueryable<GenreServiceModel> GetAllGenres()
+        {
+            return this.finalWebProjectDbContext.Genres.To<GenreServiceModel>();
+        }
+
     }
 }
