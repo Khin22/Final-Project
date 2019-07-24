@@ -351,7 +351,14 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj": {
+                "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services.Mapping\\Final Web Project.Services.Mapping.csproj"
+              },
+              "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services\\Final Web Project.Services.csproj": {
+                "projectPath": "D:\\Final-Project-Without-Sender\\Final-Project\\Final Web Project.Services\\Final Web Project.Services.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -7,3 +7,12 @@ D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\obj\D
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\obj\Debug\netstandard2.0\Final Web Project.ViewModels.AssemblyInfo.cs
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\obj\Debug\netstandard2.0\Final Web Project.ViewModels.dll
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\obj\Debug\netstandard2.0\Final Web Project.ViewModels.pdb
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\bin\Debug\netstandard2.0\Final Web Project.Data.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\bin\Debug\netstandard2.0\Final Web Project.Domain.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\bin\Debug\netstandard2.0\Final Web Project.Services.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\bin\Debug\netstandard2.0\Final Web Project.Services.Mapping.dll
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\bin\Debug\netstandard2.0\Final Web Project.Services.Mapping.pdb
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\bin\Debug\netstandard2.0\Final Web Project.Services.pdb
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\bin\Debug\netstandard2.0\Final Web Project.Data.pdb
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\bin\Debug\netstandard2.0\Final Web Project.Domain.pdb
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project.ViewModels\obj\Debug\netstandard2.0\Final Web Project.ViewModels.csproj.CopyComplete

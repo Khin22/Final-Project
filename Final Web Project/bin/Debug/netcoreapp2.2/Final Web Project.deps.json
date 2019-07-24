@@ -805,6 +805,10 @@
         }
       },
       "Final Web Project.ViewModels/1.0.0": {
+        "dependencies": {
+          "Final Web Project.Services": "1.0.0",
+          "Final Web Project.Services.Mapping": "1.0.0"
+        },
         "runtime": {
           "Final Web Project.ViewModels.dll": {}
         },

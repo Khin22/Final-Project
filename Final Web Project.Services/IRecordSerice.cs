@@ -13,6 +13,8 @@ namespace Final_Web_Project.Services
 
         Task<bool> CreateGenre(GenreServiceModel GenreServiceModel);
 
+        RecordServiceModel GetById(string id);
+
         Task<bool> Create(RecordServiceModel recordServiceModel);
 
         IQueryable<RecordServiceModel> GetAllRecords();

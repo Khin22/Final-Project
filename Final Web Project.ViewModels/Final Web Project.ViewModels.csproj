@@ -5,4 +5,9 @@
     <RootNamespace>Final_Web_Project.ViewModels</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Final Web Project.Services.Mapping\Final Web Project.Services.Mapping.csproj" />
+    <ProjectReference Include="..\Final Web Project.Services\Final Web Project.Services.csproj" />
+  </ItemGroup>
+
 </Project>

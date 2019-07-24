@@ -57,5 +57,11 @@ namespace Final_Web_Project.Services
             return this.finalWebProjectDbContext.Genres.To<GenreServiceModel>();
         }
 
+        public RecordServiceModel GetById(string id)
+        {
+            return this.finalWebProjectDbContext.Records
+                .To<RecordServiceModel>()
+                .SingleOrDefault(record => record.Id == id);
+        }
     }
 }

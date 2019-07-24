@@ -14,6 +14,10 @@ namespace Final_Web_Project.Data
 
         public DbSet<Genre> Genres { get; set; }
 
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<OrderStatus> OrderStatuses { get; set; }
+
         public FinalWebProjectDbContext(DbContextOptions<FinalWebProjectDbContext> options) : base(options)
         {
 

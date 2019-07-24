@@ -28,6 +28,7 @@ namespace Final_Web_Project.Controllers
                 List<RecordHomeViewModel> records = await this.recordSerice.GetAllRecords()
                     .Select(record => new RecordHomeViewModel
                     {
+                        Id = record.Id,
                         AlbumName = record.AlbumName,
                         Artist = record.Artist,
                         Price = record.Price,

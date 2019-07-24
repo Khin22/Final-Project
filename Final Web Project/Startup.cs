@@ -22,6 +22,7 @@ using Final_Web_Project.InputModels;
 using System.Reflection;
 using Final_Web_Project.ViewModels.Home.Index;
 using Final_Web_Project.Services.ServiceModels;
+using Final_Web_Project.Domain;
 
 namespace Final_Web_Project
 {
@@ -78,6 +79,7 @@ namespace Final_Web_Project
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddTransient<IRecordSerice, RecordService>();
+            services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<ICloudinaryService, CloudinaryService>();
         }
 
@@ -101,7 +103,7 @@ namespace Final_Web_Project
             {
                 using (var context = serviceScope.ServiceProvider.GetRequiredService<FinalWebProjectDbContext>())
                 {
-                    context.Database.Migrate();
+                    context.Database.EnsureCreated();
 
                     if (!context.Roles.Any())
                     {
@@ -115,6 +117,21 @@ namespace Final_Web_Project
                         {
                             Name = "User",
                             NormalizedName = "USER"
+                        });
+
+                        context.SaveChanges();
+                    }
+
+                    if (!context.OrderStatuses.Any())
+                    {
+                        context.OrderStatuses.Add(new OrderStatus
+                        {
+                            Name = "Active"
+                        });
+
+                        context.OrderStatuses.Add(new OrderStatus
+                        {
+                            Name = "Completed"
                         });
 
                         context.SaveChanges();

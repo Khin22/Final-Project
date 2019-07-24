@@ -111,6 +111,45 @@ namespace Final_Web_Project.Data.Migrations
                     b.ToTable("Genres");
                 });
 
+            modelBuilder.Entity("Final_Web_Project.Domain.Order", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("IssuedOn");
+
+                    b.Property<string>("IssuerId");
+
+                    b.Property<int>("Quantity");
+
+                    b.Property<string>("RecordId");
+
+                    b.Property<int>("StatusId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IssuerId");
+
+                    b.HasIndex("RecordId");
+
+                    b.HasIndex("StatusId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Final_Web_Project.Domain.OrderStatus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OrderStatus");
+                });
+
             modelBuilder.Entity("Final_Web_Project.Domain.Record", b =>
                 {
                     b.Property<string>("Id")
@@ -228,6 +267,22 @@ namespace Final_Web_Project.Data.Migrations
                     b.HasOne("Final_Web_Project.DataModels.FinalWebProjectUserRole", "UserRole")
                         .WithMany()
                         .HasForeignKey("UserRoleId");
+                });
+
+            modelBuilder.Entity("Final_Web_Project.Domain.Order", b =>
+                {
+                    b.HasOne("Final_Web_Project.DataModels.FinalWebProjectUser", "Issuer")
+                        .WithMany("Orders")
+                        .HasForeignKey("IssuerId");
+
+                    b.HasOne("Final_Web_Project.Domain.Record", "Record")
+                        .WithMany()
+                        .HasForeignKey("RecordId");
+
+                    b.HasOne("Final_Web_Project.Domain.OrderStatus", "Status")
+                        .WithMany()
+                        .HasForeignKey("StatusId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Final_Web_Project.Domain.Record", b =>
