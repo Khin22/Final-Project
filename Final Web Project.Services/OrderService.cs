@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Final_Web_Project.Data;
@@ -32,6 +33,11 @@ namespace Final_Web_Project.Services
             int result = await this.finalWebProjectDbContext.SaveChangesAsync();
 
             return result > 0;
+        }
+
+        public IQueryable<OrderServiceModel> GetAll()
+        {
+            return this.finalWebProjectDbContext.Orders.To<OrderServiceModel>();
         }
     }
 }
