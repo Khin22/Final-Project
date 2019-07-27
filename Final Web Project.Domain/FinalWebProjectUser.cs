@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 
-namespace Final_Web_Project.DataModels
+namespace Final_Web_Project.Domain
 {
     public class FinalWebProjectUser : IdentityUser
     {

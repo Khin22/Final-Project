@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Final_Web_Project.DataModels
+namespace Final_Web_Project.Domain
 {
     public class FinalWebProjectUserRole : IdentityRole
     {

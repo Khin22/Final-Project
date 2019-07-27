@@ -1,6 +1,5 @@
 ﻿using System;
 using Final_Web_Project.Data;
-using Final_Web_Project.DataModels;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;

@@ -1,5 +1,4 @@
-﻿using Final_Web_Project.DataModels;
-using Final_Web_Project.Domain;
+﻿using Final_Web_Project.Domain;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -17,6 +16,8 @@ namespace Final_Web_Project.Data
         public DbSet<Order> Orders { get; set; }
 
         public DbSet<OrderStatus> OrderStatuses { get; set; }
+
+        public DbSet<Receipt> Receipts { get; set; }
 
         public FinalWebProjectDbContext(DbContextOptions<FinalWebProjectDbContext> options) : base(options)
         {

@@ -14,10 +14,12 @@ namespace Final_Web_Project.Controllers
     public class OrderController : Controller
     {
         private readonly IOrderService orderService;
+        private readonly IReceiptService receiptService;
 
-        public OrderController(IOrderService orderService)
+        public OrderController(IOrderService orderService, IReceiptService receiptService)
         {
             this.orderService = orderService;
+            this.receiptService = receiptService;
         }
 
         [HttpGet("Cart")]
@@ -35,9 +37,13 @@ namespace Final_Web_Project.Controllers
 
         [HttpPost]
         [Route("/Order/Cart/Complete")]
-        public IActionResult Complete()
+        public async Task<IActionResult> Complete()
         {
-            return this.View();
+            string userId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+            await this.receiptService.CreateReceipt(userId);
+
+            return this.Redirect("/");
         }
     }
 }

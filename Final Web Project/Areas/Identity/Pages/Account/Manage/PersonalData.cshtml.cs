@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Final_Web_Project.DataModels;
+using Final_Web_Project.Domain;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;

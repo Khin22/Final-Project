@@ -19,7 +19,7 @@ namespace Final_Web_Project.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Final_Web_Project.DataModels.FinalWebProjectUser", b =>
+            modelBuilder.Entity("Final_Web_Project.Domain.FinalWebProjectUser", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -74,7 +74,7 @@ namespace Final_Web_Project.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("Final_Web_Project.DataModels.FinalWebProjectUserRole", b =>
+            modelBuilder.Entity("Final_Web_Project.Domain.FinalWebProjectUserRole", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -122,6 +122,8 @@ namespace Final_Web_Project.Data.Migrations
 
                     b.Property<int>("Quantity");
 
+                    b.Property<string>("ReceiptId");
+
                     b.Property<string>("RecordId");
 
                     b.Property<int>("StatusId");
@@ -129,6 +131,8 @@ namespace Final_Web_Project.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("IssuerId");
+
+                    b.HasIndex("ReceiptId");
 
                     b.HasIndex("RecordId");
 
@@ -147,7 +151,23 @@ namespace Final_Web_Project.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrderStatus");
+                    b.ToTable("OrderStatuses");
+                });
+
+            modelBuilder.Entity("Final_Web_Project.Domain.Receipt", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("IssuedOn");
+
+                    b.Property<string>("RecipientId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RecipientId");
+
+                    b.ToTable("Receipts");
                 });
 
             modelBuilder.Entity("Final_Web_Project.Domain.Record", b =>
@@ -262,18 +282,22 @@ namespace Final_Web_Project.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Final_Web_Project.DataModels.FinalWebProjectUser", b =>
+            modelBuilder.Entity("Final_Web_Project.Domain.FinalWebProjectUser", b =>
                 {
-                    b.HasOne("Final_Web_Project.DataModels.FinalWebProjectUserRole", "UserRole")
+                    b.HasOne("Final_Web_Project.Domain.FinalWebProjectUserRole", "UserRole")
                         .WithMany()
                         .HasForeignKey("UserRoleId");
                 });
 
             modelBuilder.Entity("Final_Web_Project.Domain.Order", b =>
                 {
-                    b.HasOne("Final_Web_Project.DataModels.FinalWebProjectUser", "Issuer")
+                    b.HasOne("Final_Web_Project.Domain.FinalWebProjectUser", "Issuer")
                         .WithMany("Orders")
                         .HasForeignKey("IssuerId");
+
+                    b.HasOne("Final_Web_Project.Domain.Receipt")
+                        .WithMany("Orders")
+                        .HasForeignKey("ReceiptId");
 
                     b.HasOne("Final_Web_Project.Domain.Record", "Record")
                         .WithMany()
@@ -283,6 +307,13 @@ namespace Final_Web_Project.Data.Migrations
                         .WithMany()
                         .HasForeignKey("StatusId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Final_Web_Project.Domain.Receipt", b =>
+                {
+                    b.HasOne("Final_Web_Project.Domain.FinalWebProjectUser", "Recipient")
+                        .WithMany()
+                        .HasForeignKey("RecipientId");
                 });
 
             modelBuilder.Entity("Final_Web_Project.Domain.Record", b =>
@@ -295,7 +326,7 @@ namespace Final_Web_Project.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.HasOne("Final_Web_Project.DataModels.FinalWebProjectUserRole")
+                    b.HasOne("Final_Web_Project.Domain.FinalWebProjectUserRole")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -303,7 +334,7 @@ namespace Final_Web_Project.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Final_Web_Project.DataModels.FinalWebProjectUser")
+                    b.HasOne("Final_Web_Project.Domain.FinalWebProjectUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -311,7 +342,7 @@ namespace Final_Web_Project.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Final_Web_Project.DataModels.FinalWebProjectUser")
+                    b.HasOne("Final_Web_Project.Domain.FinalWebProjectUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -319,12 +350,12 @@ namespace Final_Web_Project.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.HasOne("Final_Web_Project.DataModels.FinalWebProjectUserRole")
+                    b.HasOne("Final_Web_Project.Domain.FinalWebProjectUserRole")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Final_Web_Project.DataModels.FinalWebProjectUser")
+                    b.HasOne("Final_Web_Project.Domain.FinalWebProjectUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -332,7 +363,7 @@ namespace Final_Web_Project.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Final_Web_Project.DataModels.FinalWebProjectUser")
+                    b.HasOne("Final_Web_Project.Domain.FinalWebProjectUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);

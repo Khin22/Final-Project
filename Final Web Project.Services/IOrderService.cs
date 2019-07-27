@@ -1,4 +1,5 @@
-﻿using Final_Web_Project.Services.ServiceModels;
+﻿using Final_Web_Project.Domain;
+using Final_Web_Project.Services.ServiceModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,9 @@ namespace Final_Web_Project.Services
         Task<bool> CreateOrderAsync(OrderServiceModel orderServiceModel);
 
         IQueryable<OrderServiceModel> GetAll();
+
+        Task SetOrdersToReceipt(Receipt receipt);
+
+        Task<bool> CompleteOrder(string orderId);
     }
 }

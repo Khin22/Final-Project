@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Final_Web_Project.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Final_Web_Project.DataModels;
+using Final_Web_Project.Domain;
 using Final_Web_Project.Services;
 using System.Globalization;
 using CloudinaryDotNet;
@@ -22,7 +22,6 @@ using Final_Web_Project.InputModels;
 using System.Reflection;
 using Final_Web_Project.ViewModels.Home.Index;
 using Final_Web_Project.Services.ServiceModels;
-using Final_Web_Project.Domain;
 
 namespace Final_Web_Project
 {
@@ -80,6 +79,7 @@ namespace Final_Web_Project
 
             services.AddTransient<IRecordSerice, RecordService>();
             services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<IReceiptService, ReceiptService>();
             services.AddTransient<ICloudinaryService, CloudinaryService>();
         }
 
