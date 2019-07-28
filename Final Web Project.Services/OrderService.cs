@@ -63,5 +63,37 @@ namespace Final_Web_Project.Services
 
             receipt.Orders = ordersFromDb;
         }
+
+
+        public async Task<bool> IncreaseQuantity(string orderId)
+        {
+            Order orderFromDb = await this.finalWebProjectDbContext.Orders
+                .SingleOrDefaultAsync(order => order.Id == orderId);
+
+            orderFromDb.Quantity++;
+
+            this.finalWebProjectDbContext.Update(orderFromDb);
+            int result = await this.finalWebProjectDbContext.SaveChangesAsync();
+
+            return result > 0;
+        }
+
+        public async Task<bool> ReduceQuantity(string orderId)
+        {
+            Order orderFromDb = await this.finalWebProjectDbContext.Orders
+                .SingleOrDefaultAsync(order => order.Id == orderId);
+
+            if (orderFromDb.Quantity == 1)
+            {
+                return false;
+            }
+
+            orderFromDb.Quantity--;
+
+            this.finalWebProjectDbContext.Update(orderFromDb);
+            int result = await this.finalWebProjectDbContext.SaveChangesAsync();
+
+            return result > 0;
+        }
     }
 }

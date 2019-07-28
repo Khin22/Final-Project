@@ -36,14 +36,46 @@ namespace Final_Web_Project.Controllers
         }
 
         [HttpPost]
+        [Route("/Order/{id}/Quantity/Reduce")]
+        public async Task<IActionResult> Reduce(string id)
+        {
+            bool result = await this.orderService.ReduceQuantity(id);
+
+            if (result)
+            {
+                return this.Ok();
+            }
+            else
+            {
+                return this.Forbid();
+            }
+        }
+
+        [HttpPost]
+        [Route("/Order/{id}/Quantity/Increase")]
+        public async Task<IActionResult> Increase(string id)
+        {
+            bool result = await this.orderService.IncreaseQuantity(id);
+
+            if (result)
+            {
+                return this.Ok();
+            }
+            else
+            {
+                return this.Forbid();
+            }
+        }
+
+        [HttpPost]
         [Route("/Order/Cart/Complete")]
         public async Task<IActionResult> Complete()
         {
             string userId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
 
-            await this.receiptService.CreateReceipt(userId);
+            string receiptId = await this.receiptService.CreateReceipt(userId);
 
-            return this.Redirect("/");
+            return this.Redirect($"/Receipt/Details/{receiptId}");
         }
     }
 }

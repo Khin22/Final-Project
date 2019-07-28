@@ -24,7 +24,7 @@ namespace Final_Web_Project.Services
             this.orderService = orderService;
         }
 
-        public async Task<bool> CreateReceipt(string recepientId)
+        public async Task<string> CreateReceipt(string recepientId)
         {
             Receipt receipt = new Receipt
             {
@@ -43,7 +43,7 @@ namespace Final_Web_Project.Services
             int result = await this.context.SaveChangesAsync();
 
 
-            return result > 0;
+            return receipt.Id;
         }
 
         public IQueryable<ReceiptServiceModel> GetAll()

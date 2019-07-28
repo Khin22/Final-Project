@@ -36,6 +36,8 @@
     <Compile Remove="Migrations\20190724180652_Orders.Designer.cs" />
     <Compile Remove="Migrations\20190727144326_Receipt.cs" />
     <Compile Remove="Migrations\20190727144326_Receipt.Designer.cs" />
+    <Compile Remove="Migrations\20190727145543_Initial.cs" />
+    <Compile Remove="Migrations\20190727145543_Initial.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
