@@ -93,11 +93,8 @@ namespace Final_Web_Project
                     typeof(RecordServiceModel).GetTypeInfo().Assembly
                 );
 
-            var cultureInfo = new CultureInfo("en-US");
-            cultureInfo.NumberFormat.NumberGroupSeparator = ",";
-
-            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
-            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
+            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+            CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
 
             using (var serviceScope = app.ApplicationServices.CreateScope())
             {

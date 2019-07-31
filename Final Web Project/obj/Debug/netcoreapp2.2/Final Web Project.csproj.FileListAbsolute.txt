@@ -112,3 +112,5 @@ D:\Final-Project-Without-Sender\Final-Project\Final Web Project\obj\Debug\netcor
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Views\Order\Cart.g.cshtml.cs
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Views\Receipt\Details.g.cshtml.cs
 D:\Final-Project-Without-Sender\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Views\Receipt\Profile.g.cshtml.cs
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Record\Edit.g.cshtml.cs
+D:\Final-Project-Without-Sender\Final-Project\Final Web Project\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Record\Delete.g.cshtml.cs

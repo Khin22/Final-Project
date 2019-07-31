@@ -24,10 +24,10 @@ namespace Final_Web_Project.Controllers
         }
 
         [HttpGet(Name = "Details")]
-        public IActionResult Details(string id)
+        public async Task<IActionResult> Details(string id)
         {
-            RecordDetailsViewModel recordDetails = 
-                this.recordSerice.GetById(id).To<RecordDetailsViewModel>();
+            RecordDetailsViewModel recordDetails = (await 
+                this.recordSerice.GetById(id)).To<RecordDetailsViewModel>();
 
             return View(recordDetails);
         }

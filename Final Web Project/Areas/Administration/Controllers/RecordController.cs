@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using Final_Web_Project.Services.Mapping;
 using System.Linq;
 using System.Threading.Tasks;
 using Final_Web_Project.Data;
@@ -10,6 +11,7 @@ using Final_Web_Project.Services.ServiceModels;
 using Final_Web_Project.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Final_Web_Project.ViewModels.Record;
 
 namespace Final_Web_Project.Areas.Administration.Controllers
 {
@@ -82,6 +84,86 @@ namespace Final_Web_Project.Areas.Administration.Controllers
             recordCreate.Picture = pictureUrl;
 
             await this.recordSerice.Create(recordCreate);
+
+            return this.Redirect("/");
+        }
+
+        [HttpGet(Name = "Edit")]
+        public async Task<IActionResult> Edit(string id)
+        {
+            RecordEditInputModel recordEditInputModel = (await this.recordSerice.GetById(id)).To<RecordEditInputModel>();
+
+            if (recordEditInputModel == null)
+            {
+                //error handlling
+                return this.Redirect("/");
+            }
+
+            var allGenres = await this.recordSerice.GetAllGenres().ToListAsync();
+
+            this.ViewData["types"] = allGenres.Select(genre => new GenreCreateViewModel
+            {
+                Name = genre.Name
+            })
+                .ToList();
+
+            return this.View(recordEditInputModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(string id, RecordEditInputModel recordEditInputModel)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                var allGenres = await this.recordSerice.GetAllGenres().ToListAsync();
+
+                this.ViewData["types"] = allGenres.Select(genre => new GenreCreateViewModel
+                {
+                    Name = genre.Name
+                })
+                    .ToList();
+
+                return this.View(recordEditInputModel);
+            }
+
+            string pictureUrl = await this.cloudinaryService.UploadPictureAsync(recordEditInputModel.Picture, recordEditInputModel.AlbumName);
+
+            RecordServiceModel recordCreate = AutoMapper.Mapper.Map<RecordServiceModel>(recordEditInputModel);
+
+            recordCreate.Picture = pictureUrl;
+
+            await this.recordSerice.Edit(id, recordCreate);
+
+            return this.Redirect("/");
+        }
+
+        [HttpGet(Name = "Delete")]
+        public async Task<IActionResult> Delete(string id)
+        {
+            RecordDeleteViewModel recordDeleteModel = (await this.recordSerice.GetById(id)).To<RecordDeleteViewModel>();
+
+            if (recordDeleteModel == null)
+            {
+                //error handlling
+                return this.Redirect("/");
+            }
+
+            var allGenres = await this.recordSerice.GetAllGenres().ToListAsync();
+
+            this.ViewData["types"] = allGenres.Select(genre => new GenreDeleteViewModel
+            {
+                Name = genre.Name
+            })
+                .ToList();
+
+            return this.View(recordDeleteModel);
+        }
+
+        [HttpPost]
+        [Route("/Administration/Record/Delete/{id}")]
+        public async Task<IActionResult> Deleted(string id)
+        {
+            await this.recordSerice.Delete(id);
 
             return this.Redirect("/");
         }

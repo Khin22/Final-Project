@@ -14,6 +14,9 @@ namespace Final_Web_Project.Domain
         public string AlbumName { get; set; }
 
         [Required]
+        public DateTime DateProduced { get; set; }
+
+        [Required]
         public string Artist { get; set; }
 
         [DataType(DataType.Currency)]

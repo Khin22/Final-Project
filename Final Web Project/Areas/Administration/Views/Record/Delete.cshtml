@@ -1,13 +1,13 @@
-﻿@model Final_Web_Project.InputModels.RecordCreateInputModel
-@using Final_Web_Project.ViewModels
+﻿@model Final_Web_Project.ViewModels.Record.RecordDeleteViewModel
+@using Final_Web_Project.ViewModels.Record
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="bg-primary text-white font-weight-bold text-center p-3 w-60 mx-auto rounded">Create Record</h1>
+<h1 class="bg-primary text-white font-weight-bold text-center p-3 w-60 mx-auto rounded">Delete Record</h1>
 <form method="post" class="form border-primary-4 rounded p-3 w-60 mx-auto mt-3" enctype="multipart/form-data">
     <div asp-validation-summary="ModelOnly"></div>
     <div id="name-and-price-holder" class="d-flex justify-content-between">
@@ -19,8 +19,7 @@
                    class="form-control text-primary text-center"
                    id="albumName"
                    placeholder="AlbumName..."
-                   asp-for="AlbumName">
-            <span asp-validation-for="AlbumName" class="text-danger"></span>
+                   disabled />
         </div>
         <div class="form-group mx-auto w-45">
             <div class="d-flex justify-content-center">
@@ -31,8 +30,7 @@
                    class="form-control text-primary text-center"
                    id="price"
                    placeholder="Price..."
-                   asp-for="Price">
-            <span asp-validation-for="Price" class="text-danger"></span>
+                   disabled />
         </div>
     </div>
     <div class="form-group mx-auto w-45">
@@ -44,8 +42,7 @@
                    class="form-control text-primary text-center"
                    id="DateProduced"
                    placeholder="Date Produced..."
-                   asp-for="DateProduced">
-            <span asp-validation-for="DateProduced" class="text-danger"></span>
+                   disabled />
         </div>
         <div class="d-flex justify-content-center">
             <label asp-for="Picture" class="text-primary h5">Picture</label>
@@ -54,8 +51,7 @@
                class="form-control text-primary text-center"
                id="picture"
                placeholder="Picture..."
-               asp-for="Picture">
-        <span asp-validation-for="Picture" class="text-danger"></span>
+               disabled />
     </div>
     <div id="date-and-picture-holder" class="d-flex justify-content-between">
         <div class="form-group mx-auto w-45">
@@ -66,8 +62,7 @@
                    class="form-control text-primary text-center"
                    id="artist"
                    placeholder="Artist..."
-                   asp-for="Artist">
-            <span asp-validation-for="Artist" class="text-danger"></span>
+                   disabled />
         </div>
         <div class="form-group mx-auto w-45">
             <div class="d-flex justify-content-center">
@@ -78,8 +73,7 @@
                    class="form-control text-primary text-center"
                    id="quantity"
                    placeholder="Quantity..."
-                   asp-for="Quantity">
-            <span asp-validation-for="Quantity" class="text-danger"></span>
+                   disabled />
         </div>
     </div>
     <hr class="hr-2 bg-primary mt-4">
@@ -87,30 +81,24 @@
         <div class="d-flex justify-content-center">
             <label asp-for="Genre" class="text-primary h5">Genre</label>
         </div>
-        <select class="form-control text-primary" id="type" asp-for="Genre">
-            <option selected disabled>--- Select Genre ---</option>
-            @foreach (var type in (List<GenreCreateViewModel>)this.ViewData["types"])
+        <select class="form-control text-primary" id="type" asp-for="Genre" disabled>
+            @foreach (var type in (List<GenreDeleteViewModel>)this.ViewData["types"])
             {
-                <option value="@type.Name">@type.Name</option>
+                @if (type.Name == Model.Genre.Name)
+                {
+                    <option value="@type.Name" selected>@type.Name</option>
+                }
+                else
+                {
+                    <option value="@type.Name">@type.Name</option>
+
+                }
             }
         </select>
         <span asp-validation-for="Genre" class="text-danger"></span>
     </div>
     <hr class="hr-2 bg-primary mt-4">
     <div class="d-flex justify-content-center mt-3">
-        <button class="btn btn-primary font-weight-bold">Create Record</button>
+        <button class="btn btn-primary font-weight-bold">Delete Record</button>
     </div>
 </form>
-
-<script>
-    window.onload = () => {
-        $('#DateProduced').datetimepicker({
-            format: 'Y-m-d H:i',
-            lang: 'en'
-        });
-    };
-</script>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

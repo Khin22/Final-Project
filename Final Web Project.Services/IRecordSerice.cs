@@ -13,10 +13,14 @@ namespace Final_Web_Project.Services
 
         Task<bool> CreateGenre(GenreServiceModel GenreServiceModel);
 
-        RecordServiceModel GetById(string id);
+        Task<RecordServiceModel> GetById(string id);
 
         Task<bool> Create(RecordServiceModel recordServiceModel);
 
-        IQueryable<RecordServiceModel> GetAllRecords();
+        Task<bool> Edit(string id, RecordServiceModel recordServiceModel);
+
+        Task<bool> Delete(string id);
+
+        IQueryable<RecordServiceModel> GetAllRecords(string ordering = null);
     }
 }

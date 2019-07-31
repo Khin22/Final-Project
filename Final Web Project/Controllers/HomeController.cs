@@ -21,19 +21,22 @@ namespace Final_Web_Project.Controllers
         }
 
         
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index([FromQuery]string ordering = null)
         {
             if (this.User.Identity.IsAuthenticated)
             {
-                List<RecordHomeViewModel> records = await this.recordSerice.GetAllRecords()
+                List<RecordHomeViewModel> records = await this.recordSerice.GetAllRecords(ordering)
                     .Select(record => new RecordHomeViewModel
                     {
                         Id = record.Id,
                         AlbumName = record.AlbumName,
                         Artist = record.Artist,
                         Price = record.Price,
-                        Picture = record.Picture
+                        Picture = record.Picture,
+                        
                     }).ToListAsync();
+
+                this.ViewData["ordering"] = ordering;
 
                 return this.View(records);
             }

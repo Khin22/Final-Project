@@ -1,7 +1,16 @@
 ﻿@model List<Final_Web_Project.ViewModels.Home.Index.RecordHomeViewModel>
 @{
     ViewData["Title"] = "Home Page";
+
+    var ordering = new Dictionary<string, string>()
+{
+        {"price-lowest-to-highest", "Price (lowest to highest)" },
+        {"price-highest-to-lowest", "Price (highest to lowest)" },
+        {"Producing-Date-oldest-to-latest", "Date of Producing (oldest to latest)" },
+        {"Producing-Date-latest-to-oldest", "Date of Producing (latest to oldest)" },
+    };
 }
+
 
 @if (!this.User.Identity.IsAuthenticated)
 {
@@ -20,13 +29,30 @@ else
         </div>
         <div id="sort-holder" class="form-group w-40 d-flex justify-content-between">
             <label for="sort" class="text-primary font-weight-bold w-30 h4 mt-1 text-right">Order By: </label>
-            <select id="sort" class="form-control text-primary pl-2 ml-3 w-70">
-                <option value="none" selected>None</option>
-                <option value="none">Price (lowest to highest)</option>
-                <option value="none">Price (highest to lowest)</option>
-                <option value="none">Date of Manufacturing (oldest to newest)</option>
-                <option value="none">Date of Manufacturing (newest to oldest)</option>
-            </select>
+            <form id="order-form" action="/" method="get">
+                <select id="sort" class="form-control text-primary pl-2 ml-3 w-70" name="ordering">
+                    @if (this.ViewData["ordering"] == null)
+                    {
+                        <option selected>None</option>
+                    }
+                    else
+                    {
+                        <option>None</option>
+                    }
+                    @foreach (var item in ordering)
+                    {
+                        if (item.Key == (string)this.ViewData["ordering"])
+                        {
+                            <option value="@item.Key" selected>@item.Value</option>
+                        }
+                        else
+                        {
+                            <option value="@item.Key">@item.Value</option>
+
+                        }
+                    }
+                </select>
+            </form>
         </div>
     </div>
     <hr class="hr-2 bg-primary">
@@ -58,6 +84,13 @@ else
             </div>
         }
     </div>
+
+    <script>
+        $('#sort').change(function () {
+            $('#order-form').submit();
+        });
+
+    </script>
 
     <script>
         $('#products-search-bar').on("change paste keyup", function () {

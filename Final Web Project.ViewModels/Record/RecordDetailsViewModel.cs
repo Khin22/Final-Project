@@ -14,6 +14,8 @@ namespace Final_Web_Project.ViewModels.Record
 
         public string Artist { get; set; }
 
+        public DateTime DateProduced { get; set; }
+
         public int Quantity { get; set; }
 
         public string GenreName { get; set; }

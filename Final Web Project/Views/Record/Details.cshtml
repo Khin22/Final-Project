@@ -15,8 +15,8 @@
                 <button class="btn btn-primary text-white font-weight-bold" data-toggle="modal" data-target="#orderModal">Order</button>
                 @if (this.User.IsInRole("Admin"))
                 {
-                <a href="/Administration/Product/Edit/@Model.Id" class="btn btn-primary text-white font-weight-bold">Edit</a>
-                <a href="/Administration/Product/Delete/@Model.Id" class="btn btn-primary text-white font-weight-bold">Delete</a>
+                <a href="/Administration/Record/Edit/@Model.Id" class="btn btn-primary text-white font-weight-bold">Edit</a>
+                <a href="/Administration/Record/Delete/@Model.Id" class="btn btn-primary text-white font-weight-bold">Delete</a>
                 }
             </div>
             <hr class="hr-2 bg-primary mt-4" />
@@ -26,6 +26,7 @@
         <hr class="hr-2 bg-primary" />
         <h3 class="text-center">Album: @Model.AlbumName</h3>
         <h3 class="text-center">Artist: @Model.Artist</h3>
+        <h3 class="text-center">Date Produced: @Model.DateProduced.ToString("dd/MM/yyyy")</h3>
         <hr class="hr-2 bg-primary mt-4" />
         <h3 class="text-center">Available: @Model.Quantity Copies</h3>
         <h3 class="text-center">Price: $@Model.Price.ToString("F2")</h3>
