@@ -1,9 +1,0 @@
-D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Services.Mapping\bin\Debug\netstandard2.0\Final Web Project.Services.Mapping.deps.json
-D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Services.Mapping\bin\Debug\netstandard2.0\Final Web Project.Services.Mapping.dll
-D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Services.Mapping\obj\Debug\netstandard2.0\Final Web Project.Services.Mapping.csprojAssemblyReference.cache
-D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Services.Mapping\obj\Debug\netstandard2.0\Final Web Project.Services.Mapping.csproj.CoreCompileInputs.cache
-D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Services.Mapping\obj\Debug\netstandard2.0\Final Web Project.Services.Mapping.AssemblyInfoInputs.cache
-D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Services.Mapping\obj\Debug\netstandard2.0\Final Web Project.Services.Mapping.AssemblyInfo.cs
-D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Services.Mapping\bin\Debug\netstandard2.0\Final Web Project.Services.Mapping.pdb
-D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Services.Mapping\obj\Debug\netstandard2.0\Final Web Project.Services.Mapping.dll
-D:\Final-Project-Without-Sender\Final-Project\Final Web Project.Services.Mapping\obj\Debug\netstandard2.0\Final Web Project.Services.Mapping.pdb
