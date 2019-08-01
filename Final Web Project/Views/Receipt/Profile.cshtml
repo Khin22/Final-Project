@@ -20,15 +20,16 @@
     <tbody>
         @foreach (var receipt in Model)
         {
-            <tr class="row text-primary text-center font-weight-bold">
-                <td class="col-md-4 h5">@receipt.Id</td>
-                <td class="col-md-2 h5">@receipt.IssuedOn.ToString("dd/MM/yyyy")</td>
-                <td class="col-md-2 h5">$@(receipt.Total.ToString("F2"))</td>
-                <td class="col-md-1 h5">@receipt.Records</td>
-                <td class="col-md-3">
-                    <a href="/Receipt/Details/@receipt.Id" class="btn btn-primary font-weight-bold">Details</a>
-                </td>
-            </tr>
+        <tr class="row text-primary text-center font-weight-bold">
+            <td class="col-md-4 h5">@receipt.Id</td>
+            <td class="col-md-2 h5">@receipt.IssuedOn.ToString("dd/MM/yyyy")</td>
+            <td class="col-md-2 h5">$@(receipt.Total.ToString("F2"))</td>
+            <td class="col-md-1 h5">@receipt.Records</td>
+            <td class="col-md-3">
+                <a href="/Receipt/Details/@receipt.Id" class="btn btn-primary font-weight-bold">Details</a>
+                <a href="/Receipt/Deliver/@receipt.Id" class="btn btn-primary font-weight-bold">Deliver</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
