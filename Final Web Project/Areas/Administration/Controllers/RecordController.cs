@@ -12,6 +12,7 @@ using Final_Web_Project.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Final_Web_Project.ViewModels.Record;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Final_Web_Project.Areas.Administration.Controllers
 {
@@ -29,20 +30,61 @@ namespace Final_Web_Project.Areas.Administration.Controllers
         }
 
         [HttpGet("/Administration/Record/Genre/Create")]
-        public async Task<IActionResult> CreateType()
+        public async Task<IActionResult> CreateGenre()
         {
             return this.View("Genre/Create");
         }
 
         [HttpPost("/Administration/Record/Genre/Create")]
-        public async Task<IActionResult> CreateType(GenreCreateInputModel productTypeCreateInputModel)
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> CreateGenre(GenreCreateInputModel genreTypeCreateInputModel)
         {
+
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(genreTypeCreateInputModel ?? new GenreCreateInputModel());
+            }
+
             GenreServiceModel genreServiceModel = new GenreServiceModel
             {
-                Name = productTypeCreateInputModel.Name
+                Name = genreTypeCreateInputModel.Name
             };
 
             await this.recordSerice.CreateGenre(genreServiceModel);
+
+            return this.Redirect("/");
+        }
+
+        [HttpGet]
+        [Route("/Administration/Record/Genre/Delete")]
+        public async Task<IActionResult> DeleteGenre()
+        {
+            GenreDeleteViewModel genreDeleteModel = (await this.recordSerice.GetAllGenres().FirstAsync()).To<GenreDeleteViewModel>();
+
+            if (genreDeleteModel == null)
+            {
+                //error handlling
+                return this.Redirect("/");
+            }
+
+            var allGenres = await this.recordSerice.GetAllGenres().ToListAsync();
+
+            this.ViewData["types"] = allGenres.Select(genre => new GenreDeleteViewModel
+            {
+                Name = genre.Name
+            })
+                .ToList();
+
+            return this.View("Genre/Delete", genreDeleteModel);
+        }
+
+        [HttpPost]
+        [Route("/Administration/Record/Genre/Delete")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeletedGenre(string name)
+        {
+
+            await this.recordSerice.DeleteGenre(name);
 
             return this.Redirect("/");
         }
@@ -62,6 +104,7 @@ namespace Final_Web_Project.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create(RecordCreateInputModel recordCreateInputModel)
         {
             if (!this.ModelState.IsValid)
@@ -111,6 +154,7 @@ namespace Final_Web_Project.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(string id, RecordEditInputModel recordEditInputModel)
         {
             if (!this.ModelState.IsValid)
@@ -161,6 +205,7 @@ namespace Final_Web_Project.Areas.Administration.Controllers
 
         [HttpPost]
         [Route("/Administration/Record/Delete/{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Deleted(string id)
         {
             await this.recordSerice.Delete(id);

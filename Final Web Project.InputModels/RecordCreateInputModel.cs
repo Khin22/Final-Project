@@ -29,6 +29,8 @@ namespace Final_Web_Project.InputModels
 
         public string Genre { get; set; }
 
+        public string Description { get; set; }
+
         public void CreateMappings(IProfileExpression configuration)
         {
             configuration

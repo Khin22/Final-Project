@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Final_Web_Project.InputModels;
 using Final_Web_Project.Services.ServiceModels;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Final_Web_Project.Controllers
 {
@@ -33,6 +34,7 @@ namespace Final_Web_Project.Controllers
         }
 
         [HttpPost(Name = "Order")]
+        [Authorize]
         public async Task<IActionResult> Order(RecordOrderInputModel recordOrderInputModel)
         {
             OrderServiceModel orderServiceModel = recordOrderInputModel.To<OrderServiceModel>();

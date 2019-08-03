@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Final_Web_Project.Domain
+namespace Final_Web_Project.InputModels
 {
-    public class Genre
+    public class GenreDeleteInputModel
     {
-        public int Id { get; set; }
-
-        [Required(ErrorMessage = "invalid")]
+        [Required]
         public string Name { get; set; }
     }
 }

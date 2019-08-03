@@ -25,5 +25,7 @@ namespace Final_Web_Project.Services.ServiceModels
         public int GenreId { get; set; }
 
         public GenreServiceModel Genre { get; set; }
+
+        public string Description { get; set; }
     }
 }

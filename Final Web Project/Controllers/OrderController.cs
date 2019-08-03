@@ -8,6 +8,7 @@ using Final_Web_Project.Services;
 using Final_Web_Project.ViewModels.Order.Cart;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Final_Web_Project.Controllers
 {
@@ -24,6 +25,7 @@ namespace Final_Web_Project.Controllers
 
         [HttpGet("Cart")]
         [Route("/Order/Cart")]
+        [Authorize]
         public async Task<IActionResult> Cart()
         {
             List<OrderCartViewModel> orders = await this.orderService.GetAll()
@@ -37,6 +39,7 @@ namespace Final_Web_Project.Controllers
 
         [HttpPost]
         [Route("/Order/{id}/Quantity/Reduce")]
+        [Authorize]
         public async Task<IActionResult> Reduce(string id)
         {
             bool result = await this.orderService.ReduceQuantity(id);
@@ -53,6 +56,7 @@ namespace Final_Web_Project.Controllers
 
         [HttpPost]
         [Route("/Order/{id}/Quantity/Increase")]
+        [Authorize]
         public async Task<IActionResult> Increase(string id)
         {
             bool result = await this.orderService.IncreaseQuantity(id);
@@ -69,6 +73,7 @@ namespace Final_Web_Project.Controllers
 
         [HttpPost]
         [Route("/Order/Cart/Complete")]
+        [Authorize]
         public async Task<IActionResult> Complete()
         {
             string userId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;

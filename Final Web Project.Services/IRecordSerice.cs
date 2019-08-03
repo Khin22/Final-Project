@@ -11,7 +11,9 @@ namespace Final_Web_Project.Services
     {
         IQueryable<GenreServiceModel> GetAllGenres();
 
-        Task<bool> CreateGenre(GenreServiceModel GenreServiceModel);
+        Task<bool> CreateGenre(GenreServiceModel genreServiceModel);
+
+        Task<bool> DeleteGenre(string name);
 
         Task<RecordServiceModel> GetById(string id);
 

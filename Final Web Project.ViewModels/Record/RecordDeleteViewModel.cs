@@ -21,6 +21,8 @@ namespace Final_Web_Project.ViewModels.Record
 
         public int Quantity { get; set; }
 
+        public string Description { get; set; }
+
         public GenreDeleteViewModel Genre { get; set; }
     }
 }

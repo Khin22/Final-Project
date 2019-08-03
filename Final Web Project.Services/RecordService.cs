@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,15 +73,31 @@ namespace Final_Web_Project.Services
             return this.finalWebProjectDbContext.Records.To<RecordServiceModel>();
         }
 
-        public async Task<bool> CreateGenre(GenreServiceModel GenreServiceModel)
+        public async Task<bool> CreateGenre(GenreServiceModel genreServiceModel)
         {
             Genre genre = new Genre
             {
-                Name = GenreServiceModel.Name
+                Name = genreServiceModel.Name
             };
 
             finalWebProjectDbContext.Genres.Add(genre);
             int result = await finalWebProjectDbContext.SaveChangesAsync();
+
+            return result > 0;
+        }
+
+        public async Task<bool> DeleteGenre(string name)
+        {
+            Genre genre = await this.finalWebProjectDbContext.Genres.SingleOrDefaultAsync(genres => genres.Name == name);
+            Record recordGenre = await this.finalWebProjectDbContext.Records.FirstOrDefaultAsync(records => records.Genre.Name == name);
+
+            if (genre != null && recordGenre != null)
+            {
+
+            }
+
+            this.finalWebProjectDbContext.Genres.Remove(genre);
+            int result = await this.finalWebProjectDbContext.SaveChangesAsync();
 
             return result > 0;
         }
@@ -111,6 +128,7 @@ namespace Final_Web_Project.Services
             record.Price = recordServiceModel.Price;
             record.Picture = recordServiceModel.Picture;
             record.Quantity = recordServiceModel.Quantity;
+            record.Description = recordServiceModel.Description;
 
             record.Genre = GenreFromDb;
 

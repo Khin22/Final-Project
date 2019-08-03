@@ -1,14 +1,12 @@
-﻿@model Final_Web_Project.InputModels.GenreCreateInputModel
-@using Final_Web_Project.InputModels
+﻿@model Final_Web_Project.ViewModels.Record.GenreDeleteViewModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1 class="bg-primary text-white font-weight-bold text-center p-3 w-30 mx-auto rounded">Create Genre</h1>
-<form method="post" action="/Administration/Record/Genre/Create" class="form border-primary-4 rounded p-3 w-30 mx-auto mt-3">
+<h1 class="bg-primary text-white font-weight-bold text-center p-3 w-30 mx-auto rounded">Delete Genre</h1>
+<form method="post" action="/Administration/Record/Genre/Delete" class="form border-primary-4 rounded p-3 w-30 mx-auto mt-3">
     <div class="form-group mx-auto">
         <div class="d-flex justify-content-center">
             <label asp-for="Name" class="text-primary h5">Name</label>
@@ -19,8 +17,7 @@
     </div>
     <hr class="hr-2 bg-primary mt-4">
     <div class="d-flex justify-content-between mt-3">
-        <button class="btn btn-primary font-weight-bold">Create Genre</button>
-        <a href="/Administration/Record/Genre/Delete" class="btn btn-primary text-white font-weight-bold">Delete Genre</a>
+        <button class="btn btn-primary font-weight-bold">Delete Genre</button>
     </div>
 </form>
 

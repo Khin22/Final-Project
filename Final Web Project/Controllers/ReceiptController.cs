@@ -8,6 +8,7 @@ using Final_Web_Project.Services.Mapping;
 using Final_Web_Project.Services.ServiceModels;
 using Final_Web_Project.ViewModels.Receipt.Details;
 using Final_Web_Project.ViewModels.Receipt.Profile;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,6 +24,7 @@ namespace Final_Web_Project.Controllers
         }
 
         [HttpGet(Name = "Profile")]
+        [Authorize]
         public async Task<IActionResult> Profile()
         {
             string userId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
@@ -38,6 +40,7 @@ namespace Final_Web_Project.Controllers
         }
 
         [HttpGet(Name = "Details")]
+        [Authorize]
         public async Task<IActionResult> Details(string id)
         {
             ReceiptServiceModel receiptServiceModel = await this.receiptService.GetAll()
