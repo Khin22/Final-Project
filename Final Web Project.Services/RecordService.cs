@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -89,17 +88,16 @@ namespace Final_Web_Project.Services
         public async Task<bool> DeleteGenre(string name)
         {
             Genre genre = await this.finalWebProjectDbContext.Genres.SingleOrDefaultAsync(genres => genres.Name == name);
-            Record recordGenre = await this.finalWebProjectDbContext.Records.FirstOrDefaultAsync(records => records.Genre.Name == name);
+            var recordsByGenreId = await this.finalWebProjectDbContext.Records.Where(records => records.GenreId == genre.Id).ToListAsync();
 
-            if (genre != null && recordGenre != null)
+            foreach (var item in recordsByGenreId)
             {
-
+                recordsByGenreId.First(records => records.GenreId == genre.Id).GenreId = 7;
             }
 
             this.finalWebProjectDbContext.Genres.Remove(genre);
-            int result = await this.finalWebProjectDbContext.SaveChangesAsync();
-
-            return result > 0;
+            int results = await this.finalWebProjectDbContext.SaveChangesAsync();
+            return results > 0;
         }
 
         public IQueryable<GenreServiceModel> GetAllGenres()

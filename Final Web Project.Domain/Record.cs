@@ -26,9 +26,10 @@ namespace Final_Web_Project.Domain
 
         public int GenreId { get; set; }
 
+        public Genre Genre { get; set; }
+
         public string Description { get; set; }
 
-        public Genre Genre { get; set; }
 
         public string Picture { get; set; }
 
