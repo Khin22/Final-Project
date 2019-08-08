@@ -18,5 +18,13 @@ namespace Final_Web_Project.Domain
         public string RecipientId { get; set; }
 
         public FinalWebProjectUser Recipient { get; set; }
+
+        public int ReceiptStatusId { get; set; }
+
+        public ReceiptStatus ReceiptStatus { get; set; }
+
+        public string DeliveryId { get; set; }
+
+        public DeliveryDetails DeliveryDetails { get; set; }
     }
 }

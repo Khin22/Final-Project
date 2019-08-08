@@ -1,94 +1,107 @@
 ﻿@using Final_Web_Project.ViewModels.Order.Cart
 @model List<OrderCartViewModel>
-@{
+    @{
     ViewData["Title"] = "Cart";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    }
 
-<h1 class="text-left text-primary">Cart</h1>
-<hr class="hr-2 bg-primary">
-@if (Model.Count == 0)
-{
-    <h2 class="text-center text-primary">You have no orders in your cart.</h2>
+    <h1 class="text-left text-white">Cart</h1>
     <hr class="hr-2 bg-primary">
-}
-else
-{
+    @if (Model.Count == 0)
+    {
+    <h2 class="text-center text-white">You have no orders in your cart.</h2>
+    <hr class="hr-2 bg-primary">
+    }
+    else
+    {
     <div id="orders" class="text-primary">
         <div class="order-info row mt-4">
-            <h3 class="col-md-1 text-left">#</h3>
-            <h3 class="col-md-3 text-left">Image</h3>
-            <h3 class="col-md-3 text-left">Album Name</h3>
-            <h3 class="col-md-2 text-left">Price</h3>
-            <h3 class="col-md-1 text-left">Quantity</h3>
-            <h3 class="col-md-2 text-center">Actions</h3>
+            <h3 class="col-md-1 text-white">#</h3>
+            <h3 class="col-md-3 text-white">Image</h3>
+            <h3 class="col-md-3 text-white">Album Name</h3>
+            <h3 class="col-md-2 text-white">Price</h3>
+            <h3 class="col-md-1 text-white">Quantity</h3>
+            <h3 class="text-white col-md-2 text-center">Actions</h3>
         </div>
         <hr class="hr-2 bg-primary">
         @for (int i = 0; i < Model.Count; i++)
         {
-            <div class="order row">
-                <h5 class="col-md-1 text-left">@(i + 1)</h5>
-                <div class="col-md-3">
-                    <img class="img-thumbnail product-cart-image"
-                         src="@Model[i].RecordPicture" />
+        <div class="order row">
+            <h5 class="col-md-1 text-left text-white">@(i + 1)</h5>
+            <div class="col-md-3">
+                <img class="img-thumbnail product-cart-image"
+                     src="@Model[i].RecordPicture" />
+            </div>
+            <h5 class="col-md-3 text-left text-white">@Model[i].RecordAlbumName</h5>
+            <h5 class="col-md-2 text-left text-white order-price">@Model[i].RecordPrice</h5>
+            <h5 class="col-md-1 text-right text-white order-quantity">
+                x
+                <span class="qty">@(Model[i].Quantity)</span>
+            </h5>
+            <div class="col-md-1 mx-auto d-flex justify-content-around">
+                <div class="minus-button" id="@(Model[i].Id)-minus">
+                    <i class="fas fa-minus text-white h4"></i>
                 </div>
-                <h5 class="col-md-3 text-left">@Model[i].RecordAlbumName</h5>
-                <h5 class="col-md-2 text-left order-price">@Model[i].RecordPrice</h5>
-                <h5 class="col-md-1 text-right order-quantity">x@(Model[i].Quantity)</h5>
-                <div class="col-md-1 mx-auto d-flex justify-content-around">
-                    <div class="minus-button" id="@(Model[i].Id)-minus">
-                        <i class="fas fa-minus text-primary h4"></i>
-                    </div>
-                    <div class="plus-button" id="@(Model[i].Id)-plus">
-                        <i class="fas fa-plus text-primary h4"></i>
-                    </div>
+                <div class="plus-button" id="@(Model[i].Id)-plus">
+                    <i class="fas fa-plus text-white h4"></i>
                 </div>
             </div>
+            <div class="delete-button" id="@(Model[i].Id)">
+                <i class="fas fa-times text-white h4"></i>
+            </div>
+        </div>
         }
     </div>
     <hr class="hr-2 bg-primary">
     <form action="/Order/Cart/Complete" method="post" class="d-flex justify-content-between">
         <button class="btn btn-primary font-weight-bold">Cashout</button>
-        <h2 class="text-primary">Total: @Model.Sum(order => order.RecordPrice * order.Quantity).ToString("F2")</h2>
+        <strong id="total-price" class="text-white">Total: @Model.Sum(order => order.RecordPrice * order.Quantity).ToString("F2")</strong>
     </form>
     <script>
         function updateTotalPrice() {
-            let orders = $('.order');
             let totalPrice = 0;
-            for (let order of orders) {
-                let priceElement = $($(order).children()[3]);
-                let quantityElement = $($(order).children()[4]);
-                let currentPrice = Number($(priceElement).text())
-                let currentQuantity = Number($(quantityElement).text().toString().replace('x', ''));
-                totalPrice += currentPrice * currentQuantity;
-            }
-            $('#total-price').text('Total: ' + totalPrice.toFixed(2));
+            $('.order').each(function (i, item) {
+                totalPrice += parseInt($(item).find('.order-quantity .qty').text()) * parseFloat($(item).find('.order-price').text());
+            });
+            $('#total-price').text('Total: ' + parseInt(totalPrice).toFixed(2));
         }
         $('.minus-button').click(function () {
             let orderId = $(this).attr('id').toString().replace('-minus', '');
-            let element = $($($($(this).parent()).parent()).children()[4]);
+            let element = $(this).parents('.order').find('.order-quantity');
             $.post({
                 url: `/Order/${orderId}/Quantity/Reduce`,
                 success: function () {
                     let currentQuantity = Number(element.text().toString().replace('x', ''));
-                    element.text('x' + (currentQuantity - 1));
+                    element.find('.qty').text(currentQuantity - 1);
                     updateTotalPrice();
                 }
             });
-            location.reload(true);
         });
         $('.plus-button').click(function () {
             let orderId = $(this).attr('id').toString().replace('-plus', '');
-            let element = $($($($(this).parent()).parent()).children()[4]);
+            let element = $(this).parents('.order').find('.order-quantity');
+
             $.post({
                 url: `/Order/${orderId}/Quantity/Increase`,
                 success: function () {
                     let currentQuantity = Number(element.text().toString().replace('x', ''));
-                    element.text('x' + (currentQuantity + 1));
+                    element.find('.qty').text(currentQuantity + 1);
                     updateTotalPrice();
                 }
             });
-            location.reload(true);
+        });
+        $('.delete-button').click(function () {
+            let orderId = $(this).attr('id').toString();
+            let element = $(this).parents('.order').find('.order-id');
+
+            $.post({
+                url: `/Order/${orderId}/Id/Delete`,
+                success: function () {
+                    $(this).parents('.order').remove();
+                    updateTotalPrice();
+                    location.reload();
+                }
+            });
         });
     </script>
-}
+    }

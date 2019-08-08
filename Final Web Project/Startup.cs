@@ -81,6 +81,7 @@ namespace Final_Web_Project
             services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<IReceiptService, ReceiptService>();
             services.AddTransient<ICloudinaryService, CloudinaryService>();
+            services.AddTransient<IDeliveryService, DeliveryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -129,6 +130,21 @@ namespace Final_Web_Project
                         context.OrderStatuses.Add(new OrderStatus
                         {
                             Name = "Completed"
+                        });
+
+                        context.SaveChanges();
+                    }
+
+                    if (!context.ReceiptStatuses.Any())
+                    {
+                        context.ReceiptStatuses.Add(new ReceiptStatus
+                        {
+                            Name = "Delivered"
+                        });
+
+                        context.ReceiptStatuses.Add(new ReceiptStatus
+                        {
+                            Name = "Not Delivered"
                         });
 
                         context.SaveChanges();

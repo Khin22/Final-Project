@@ -18,6 +18,8 @@ namespace Final_Web_Project.Services
 
         Task<bool> CompleteOrder(string orderId);
 
+        Task<bool> DeleteOrder(string orderId);
+
         Task<bool> ReduceQuantity(string orderId);
 
         Task<bool> IncreaseQuantity(string orderId);

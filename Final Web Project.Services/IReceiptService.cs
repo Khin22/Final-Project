@@ -9,7 +9,7 @@ namespace Final_Web_Project.Services
 {
     public interface IReceiptService
     {
-        Task<string> CreateReceipt(string recepientId);
+        Task<string> CreateReceipt(string recepientId, int receiptStatusId);
 
         IQueryable<ReceiptServiceModel> GetAll();
 

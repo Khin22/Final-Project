@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Final_Web_Project.Services;
 using Final_Web_Project.ViewModels.Order.Cart;
+using Final_Web_Project.ViewModels.Order;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
@@ -78,9 +79,26 @@ namespace Final_Web_Project.Controllers
         {
             string userId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
 
-            string receiptId = await this.receiptService.CreateReceipt(userId);
+            string receiptId = await this.receiptService.CreateReceipt(userId, 2);
 
             return this.Redirect($"/Receipt/Details/{receiptId}");
+        }
+
+        [HttpPost]
+        [Route("/Order/{id}/Id/Delete")]
+        [Authorize]
+        public async Task<IActionResult> Delete(string id)
+        {
+            bool result = await this.orderService.DeleteOrder(id);
+
+            if (result)
+            {
+                return this.Ok();
+            }
+            else
+            {
+                return this.Forbid();
+            }
         }
     }
 }

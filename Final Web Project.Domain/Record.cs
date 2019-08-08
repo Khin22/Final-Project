@@ -30,7 +30,6 @@ namespace Final_Web_Project.Domain
 
         public string Description { get; set; }
 
-
         public string Picture { get; set; }
 
         public int Quantity { get; set; }

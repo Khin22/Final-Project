@@ -8,98 +8,102 @@
 }
 
 <h1 class="bg-primary text-white font-weight-bold text-center p-3 w-60 mx-auto rounded">Delete Record</h1>
-<form method="post" class="form border-primary-4 rounded p-3 w-60 mx-auto mt-3" enctype="multipart/form-data">
+<form method="post" class="form rounded p-3 w-60 mx-auto mt-3" enctype="multipart/form-data">
     <div asp-validation-summary="ModelOnly"></div>
     <div id="name-and-price-holder" class="d-flex justify-content-between">
         <div class="form-group mx-auto w-45">
             <div class="d-flex justify-content-center">
-                <label asp-for="AlbumName" class="text-primary h5">Album Name</label>
+                <label asp-for="AlbumName" class="text-white h5">Album Name</label>
             </div>
             <input type="text"
                    class="form-control text-primary text-center"
                    id="albumName"
-                   placeholder="AlbumName..."
-                   disabled />
+                   placeholder="@Model.AlbumName"
+                   disabled>
         </div>
         <div class="form-group mx-auto w-45">
             <div class="d-flex justify-content-center">
-                <label asp-for="Price" class="text-primary h5">Price</label>
+                <label asp-for="Price" class="text-white h5">Price</label>
             </div>
             <input type="number"
                    step="0.01"
                    class="form-control text-primary text-center"
                    id="price"
-                   placeholder="Price..."
-                   disabled />
+                   placeholder="@Model.Price"
+                   disabled >
         </div>
     </div>
-    <div class="form-group mx-auto w-45">
+    <div id="name-and-price-holder" class="d-flex justify-content-between">
         <div class="form-group mx-auto w-45">
             <div class="d-flex justify-content-center">
-                <label asp-for="DateProduced" class="text-primary h5">Date Produced</label>
+                <label asp-for="DateProduced" class="text-white h5">Date Produced</label>
             </div>
             <input type="text"
                    class="form-control text-primary text-center"
-                   id="DateProduced"
-                   placeholder="Date Produced..."
-                   disabled />
+                   id="dateProduced"
+                   placeholder="@Model.DateProduced"
+                   disabled >
         </div>
-        <div class="d-flex justify-content-center">
-            <label asp-for="Picture" class="text-primary h5">Picture</label>
+        <div class="form-group mx-auto w-45">
+            <div class="d-flex justify-content-center">
+                <label asp-for="Picture" class="text-white h5">Picture</label>
+            </div>
+            <input type="text"
+                   class="form-control text-primary text-center"
+                   id="picture"
+                   placeholder="@Model.Picture"
+                   disabled >
         </div>
-        <input type="file"
-               class="form-control text-primary text-center"
-               id="picture"
-               placeholder="Picture..."
-               disabled />
     </div>
     <div id="date-and-picture-holder" class="d-flex justify-content-between">
         <div class="form-group mx-auto w-45">
             <div class="d-flex justify-content-center">
-                <label asp-for="Artist" class="text-primary h5">Artist</label>
+                <label asp-for="Artist" class="text-white h5">Artist</label>
             </div>
             <input type="text"
                    class="form-control text-primary text-center"
                    id="artist"
-                   placeholder="Artist..."
-                   disabled />
+                   placeholder="@Model.Artist"
+                   disabled >
         </div>
         <div class="form-group mx-auto w-45">
             <div class="d-flex justify-content-center">
-                <label asp-for="Quantity" class="text-primary h5">Quantity</label>
+                <label asp-for="Quantity" class="text-white h5">Quantity</label>
             </div>
             <input type="number"
                    step="1"
                    class="form-control text-primary text-center"
                    id="quantity"
-                   placeholder="Quantity..."
-                   disabled />
+                   placeholder="@Model.Quantity"
+                   disabled >
         </div>
     </div>
     <hr class="hr-2 bg-primary mt-4">
     <div class="form-group mx-auto w-45">
         <div class="d-flex justify-content-center">
-            <label asp-for="Genre" class="text-primary h5">Genre</label>
+            <label asp-for="Genre" class="text-white h5">Genre</label>
         </div>
         <select class="form-control text-primary" id="type" asp-for="Genre" disabled>
-            @foreach (var type in (List<GenreDeleteViewModel>)this.ViewData["types"])
-            {
+            @foreach (var type in (List
+            <GenreDeleteViewModel>
+                )this.ViewData["types"])
+                {
                 @if (type.Name == Model.Genre.Name)
                 {
-                    <option value="@type.Name" selected>@type.Name</option>
+                <option value="@type.Name" selected>@type.Name</option>
                 }
                 else
                 {
-                    <option value="@type.Name">@type.Name</option>
+                <option value="@type.Name">@type.Name</option>
 
                 }
-            }
+                }
         </select>
         <span asp-validation-for="Genre" class="text-danger"></span>
     </div>
     <div class="form-group mx-auto w-45">
         <div class="d-flex justify-content-center">
-            <label asp-for="Description" class="text-primary h5">Description</label>
+            <label asp-for="Description" class="text-white h5">Description</label>
         </div>
         <textarea rows="10" cols="50"
                   id="description"

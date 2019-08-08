@@ -30,13 +30,25 @@ namespace Final_Web_Project.Data.Migrations
 
                     b.Property<string>("DeliveryAdderss");
 
+                    b.Property<DateTime>("IssuedOn");
+
                     b.Property<string>("PhoneNumber");
 
                     b.Property<string>("PostalCode");
 
+                    b.Property<string>("ReceiptId");
+
+                    b.Property<string>("RecipientId");
+
                     b.Property<string>("TwoNames");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ReceiptId")
+                        .IsUnique()
+                        .HasFilter("[ReceiptId] IS NOT NULL");
+
+                    b.HasIndex("RecipientId");
 
                     b.ToTable("DeliveryDetails");
                 });
@@ -185,15 +197,34 @@ namespace Final_Web_Project.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("DeliveryId");
+
                     b.Property<DateTime>("IssuedOn");
+
+                    b.Property<int>("ReceiptStatusId");
 
                     b.Property<string>("RecipientId");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ReceiptStatusId");
+
                     b.HasIndex("RecipientId");
 
                     b.ToTable("Receipts");
+                });
+
+            modelBuilder.Entity("Final_Web_Project.Domain.ReceiptStatus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ReceiptStatuses");
                 });
 
             modelBuilder.Entity("Final_Web_Project.Domain.Record", b =>
@@ -312,6 +343,17 @@ namespace Final_Web_Project.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("Final_Web_Project.Domain.DeliveryDetails", b =>
+                {
+                    b.HasOne("Final_Web_Project.Domain.Receipt", "Receipt")
+                        .WithOne("DeliveryDetails")
+                        .HasForeignKey("Final_Web_Project.Domain.DeliveryDetails", "ReceiptId");
+
+                    b.HasOne("Final_Web_Project.Domain.FinalWebProjectUser", "Recipient")
+                        .WithMany()
+                        .HasForeignKey("RecipientId");
+                });
+
             modelBuilder.Entity("Final_Web_Project.Domain.FinalWebProjectUser", b =>
                 {
                     b.HasOne("Final_Web_Project.Domain.FinalWebProjectUserRole", "UserRole")
@@ -341,6 +383,11 @@ namespace Final_Web_Project.Data.Migrations
 
             modelBuilder.Entity("Final_Web_Project.Domain.Receipt", b =>
                 {
+                    b.HasOne("Final_Web_Project.Domain.ReceiptStatus", "ReceiptStatus")
+                        .WithMany()
+                        .HasForeignKey("ReceiptStatusId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("Final_Web_Project.Domain.FinalWebProjectUser", "Recipient")
                         .WithMany()
                         .HasForeignKey("RecipientId");

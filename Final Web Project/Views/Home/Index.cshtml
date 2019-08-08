@@ -1,22 +1,22 @@
 ﻿@model List<Final_Web_Project.ViewModels.Home.Index.RecordHomeViewModel>
 @{
-    ViewData["Title"] = "Home Page";
+        ViewData["Title"] = "Home Page";
 
-    var ordering = new Dictionary<string, string>()
+        var ordering = new Dictionary<string, string>()
 {
-        {"price-lowest-to-highest", "Price (lowest to highest)" },
-        {"price-highest-to-lowest", "Price (highest to lowest)" },
-        {"Producing-Date-oldest-to-latest", "Date of Producing (oldest to latest)" },
-        {"Producing-Date-latest-to-oldest", "Date of Producing (latest to oldest)" },
+        {"price-lowest-to-highest", "Price (lowest to highest)"},
+        {"price-highest-to-lowest", "Price (highest to lowest)"},
+        {"Producing-Date-oldest-to-latest", "Date of Producing (oldest to latest)"},
+        {"Producing-Date-latest-to-oldest", "Date of Producing (latest to oldest)"},
     };
-}
+    }
 
 
-@if (!this.User.Identity.IsAuthenticated)
-{
+    @if (!this.User.Identity.IsAuthenticated)
+    {
     <div class="jumbotron bg-primary mt-3 mb-3">
-        <h1 class="font-weight-bold text-white">KaliGram Vinyl Store</h1>
-        <hr class="bg-white hr-2" />
+        <h1 class="font-weight-bold text-white">Kaligram Vinyl Store</h1>
+        <hr class="bg-danger hr-2" />
         <h3 class="text-white">Have a nice shopping experience!</h3>
     </div>
 
@@ -28,7 +28,7 @@ else
             <input type="text" class="form-control text-primary" id="products-search-bar" name="search" placeholder="Search..." />
         </div>
         <div id="sort-holder" class="form-group w-40 d-flex justify-content-between">
-            <label for="sort" class="text-primary font-weight-bold w-30 h4 mt-1 text-right">Order By: </label>
+            <label for="sort" class="text-white font-weight-bold w-30 h4 mt-1 text-right">Order By: </label>
             <form id="order-form" action="/" method="get">
                 <select id="sort" class="form-control text-primary pl-2 ml-3 w-70" name="ordering">
                     @if (this.ViewData["ordering"] == null)
@@ -70,9 +70,9 @@ else
                                     <img class="img-thumbnail product-image" src="@Model[j].Picture" alt="...">
                                 </a>
                             </div>
-                            <h5 class="text-primary text-center mt-3">Album: @Model[j].AlbumName</h5>
-                            <h5 class="text-primary text-center mt-3">Artist: @Model[j].Artist</h5>
-                            <h5 class="text-primary text-center mt-3">Price: $@Model[j].Price.ToString("F2")</h5>
+                            <h5 class="text-white text-center mt-3">Album: @Model[j].AlbumName</h5>
+                            <h5 class="text-white text-center mt-3">Artist: @Model[j].Artist</h5>
+                            <h5 class="text-white text-center mt-3">Price: $@Model[j].Price.ToString("F2")</h5>
                         </div>
                     }
                     else

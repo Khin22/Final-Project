@@ -1,0 +1,93 @@
+﻿@model Final_Web_Project.InputModels.DeliveryDetailsCreateInputModel
+
+@{
+    ViewData["Title"] = "Deliver";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="bg-primary text-white font-weight-bold text-center p-3 w-60 mx-auto rounded">Delivery Details</h3>
+<form method="post" class="form rounded p-3 w-60 mx-auto mt-3" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div id="name-and-price-holder" class="d-flex justify-content-between">
+        <div class="form-group mx-auto w-45">
+            <div class="d-flex justify-content-center">
+                <label asp-for="TwoNames" class="text-white h5">Full Name</label>
+            </div>
+            <input type="text"
+                   class="form-control text-primary text-center"
+                   id="twonames"
+                   placeholder="Full Name..."
+                   asp-for="TwoNames">
+            <span asp-validation-for="TwoNames" class="text-danger"></span>
+        </div>
+        <div class="form-group mx-auto w-45">
+            <div class="d-flex justify-content-center">
+                <label asp-for="DeliveryAdderss" class="text-white h5">Delivery Adderss</label>
+            </div>
+            <input type="text"
+                   class="form-control text-primary text-center"
+                   id="deliveryAdderss"
+                   placeholder="Delivery Adderss..."
+                   asp-for="DeliveryAdderss">
+            <span asp-validation-for="DeliveryAdderss" class="text-danger"></span>
+        </div>
+    </div>
+    <div id="name-and-price-holder" class="d-flex justify-content-between">
+        <div class="form-group mx-auto w-45">
+            <div class="d-flex justify-content-center">
+                <label asp-for="City" class="text-white h5">City</label>
+            </div>
+            <input type="text"
+                   class="form-control text-primary text-center"
+                   id="city"
+                   placeholder="City..."
+                   asp-for="City">
+            <span asp-validation-for="City" class="text-danger"></span>
+        </div>
+        <div class="form-group mx-auto w-45">
+            <div class="d-flex justify-content-center">
+                <label asp-for="PostalCode" class="text-white h5">Postal Code</label>
+            </div>
+            <input type="text"
+                   class="form-control text-primary text-center"
+                   id="postalCode"
+                   placeholder="PostalCode..."
+                   asp-for="PostalCode">
+            <span asp-validation-for="PostalCode" class="text-danger"></span>
+        </div>
+    </div>
+    <div id="date-and-picture-holder" class="d-flex justify-content-between">
+        <div class="form-group mx-auto w-45">
+            <div class="d-flex justify-content-center">
+                <label asp-for="Country" class="text-white h5">Country</label>
+            </div>
+            <input type="text"
+                   class="form-control text-primary text-center"
+                   id="country"
+                   placeholder="Country..."
+                   asp-for="Country">
+            <span asp-validation-for="Country" class="text-danger"></span>
+        </div>
+        <div class="form-group mx-auto w-45">
+            <div class="d-flex justify-content-center">
+                <label asp-for="PhoneNumber" class="text-white h5">PhoneNumber</label>
+            </div>
+            <input type="text"
+                   class="form-control text-primary text-center"
+                   id="phoneNumber"
+                   placeholder="PhoneNumber..."
+                   asp-for="PhoneNumber">
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+    </div>
+    <hr class="hr-2 bg-primary mt-4">
+    <div class="d-flex justify-content-center mt-3">
+        <button class="btn btn-primary font-weight-bold">Deliver</button>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

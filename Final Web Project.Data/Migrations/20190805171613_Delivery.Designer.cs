@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Final_Web_Project.Data.Migrations
 {
     [DbContext(typeof(FinalWebProjectDbContext))]
-    [Migration("20190803150659_Initial")]
-    partial class Initial
+    [Migration("20190805171613_Delivery")]
+    partial class Delivery
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,22 @@ namespace Final_Web_Project.Data.Migrations
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Final_Web_Project.Domain.Delivery", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("IssuedOn");
+
+                    b.Property<string>("RecipientId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RecipientId");
+
+                    b.ToTable("Deliveries");
+                });
 
             modelBuilder.Entity("Final_Web_Project.Domain.DeliveryDetails", b =>
                 {
@@ -36,9 +52,13 @@ namespace Final_Web_Project.Data.Migrations
 
                     b.Property<string>("PostalCode");
 
+                    b.Property<string>("ReceiptId");
+
                     b.Property<string>("TwoNames");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ReceiptId");
 
                     b.ToTable("DeliveryDetails");
                 });
@@ -187,15 +207,36 @@ namespace Final_Web_Project.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("DeliveryId");
+
                     b.Property<DateTime>("IssuedOn");
+
+                    b.Property<int>("ReceiptStatusId");
 
                     b.Property<string>("RecipientId");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DeliveryId");
+
+                    b.HasIndex("ReceiptStatusId");
+
                     b.HasIndex("RecipientId");
 
                     b.ToTable("Receipts");
+                });
+
+            modelBuilder.Entity("Final_Web_Project.Domain.ReceiptStatus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ReceiptStatuses");
                 });
 
             modelBuilder.Entity("Final_Web_Project.Domain.Record", b =>
@@ -314,6 +355,20 @@ namespace Final_Web_Project.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("Final_Web_Project.Domain.Delivery", b =>
+                {
+                    b.HasOne("Final_Web_Project.Domain.FinalWebProjectUser", "Recipient")
+                        .WithMany()
+                        .HasForeignKey("RecipientId");
+                });
+
+            modelBuilder.Entity("Final_Web_Project.Domain.DeliveryDetails", b =>
+                {
+                    b.HasOne("Final_Web_Project.Domain.Receipt", "Receipt")
+                        .WithMany()
+                        .HasForeignKey("ReceiptId");
+                });
+
             modelBuilder.Entity("Final_Web_Project.Domain.FinalWebProjectUser", b =>
                 {
                     b.HasOne("Final_Web_Project.Domain.FinalWebProjectUserRole", "UserRole")
@@ -343,6 +398,15 @@ namespace Final_Web_Project.Data.Migrations
 
             modelBuilder.Entity("Final_Web_Project.Domain.Receipt", b =>
                 {
+                    b.HasOne("Final_Web_Project.Domain.Delivery")
+                        .WithMany("Receipts")
+                        .HasForeignKey("DeliveryId");
+
+                    b.HasOne("Final_Web_Project.Domain.ReceiptStatus", "ReceiptStatus")
+                        .WithMany()
+                        .HasForeignKey("ReceiptStatusId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("Final_Web_Project.Domain.FinalWebProjectUser", "Recipient")
                         .WithMany()
                         .HasForeignKey("RecipientId");

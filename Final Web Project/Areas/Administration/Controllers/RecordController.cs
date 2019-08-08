@@ -19,13 +19,11 @@ namespace Final_Web_Project.Areas.Administration.Controllers
     public class RecordController : AdminController
     {
         private readonly IRecordSerice recordSerice;
-        private readonly FinalWebProjectDbContext context;
         private readonly ICloudinaryService cloudinaryService;
 
-        public RecordController(IRecordSerice recordSerice, FinalWebProjectDbContext context, ICloudinaryService cloudinaryService)
+        public RecordController(IRecordSerice recordSerice, ICloudinaryService cloudinaryService)
         {
             this.recordSerice = recordSerice;
-            this.context = context;
             this.cloudinaryService = cloudinaryService;
         }
 
@@ -63,7 +61,6 @@ namespace Final_Web_Project.Areas.Administration.Controllers
 
             if (genreDeleteModel == null)
             {
-                //error handlling
                 return this.Redirect("/");
             }
 

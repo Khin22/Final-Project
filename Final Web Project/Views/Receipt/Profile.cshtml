@@ -1,35 +1,50 @@
-﻿@model IEnumerable<Final_Web_Project.ViewModels.Receipt.Profile.ReceiptProfileViewModel>
+﻿@model List<Final_Web_Project.ViewModels.Receipt.Profile.ReceiptProfileViewModel>
 
 @{
     ViewData["Title"] = "Profile";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="text-center text-primary">My Receipts</h1>
+<h3 class="text-center text-white">My Receipts</h3>
 <hr class="hr-2 bg-primary w-50">
-<table class="table table-hover">
-    <thead>
-        <tr class="row text-primary text-center font-weight-bold">
-            <th class="col-md-4 h3">Id</th>
-            <th class="col-md-2 h3">Issued On</th>
-            <th class="col-md-2 h3">Total</th>
-            <th class="col-md-1 h3">Records</th>
-            <th class="col-md-3 h3">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var receipt in Model)
-        {
-        <tr class="row text-primary text-center font-weight-bold">
-            <td class="col-md-4 h5">@receipt.Id</td>
-            <td class="col-md-2 h5">@receipt.IssuedOn.ToString("dd/MM/yyyy")</td>
-            <td class="col-md-2 h5">$@(receipt.Total.ToString("F2"))</td>
-            <td class="col-md-1 h5">@receipt.Records</td>
-            <td class="col-md-3">
-                <a href="/Receipt/Details/@receipt.Id" class="btn btn-primary font-weight-bold">Details</a>
-                <a href="/Receipt/Deliver/@receipt.Id" class="btn btn-primary font-weight-bold">Deliver</a>
-            </td>
-        </tr>
-        }
-    </tbody>
-</table>
+@if (Model.Count == 0)
+{
+    <h2 class="text-center text-white">You have no receipts generated yet.</h2>
+    <hr class="hr-2 bg-primary">
+}
+else
+{
+    <table class="table table-hover bg-light">
+        <thead>
+            <tr class="row text-white text-center font-weight-bold">
+                <th class="col-md-4 h4">Id</th>
+                <th class="col-md-2 h4">Issued On</th>
+                <th class="col-md-2 h4">Total</th>
+                <th class="col-md-1 h4">Records</th>
+                <th class="col-md-3 h4">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var receipt in Model)
+            {
+                <tr class="row text-white text-center font-weight-bold">
+                    <td class="col-md-4 h5">@receipt.Id</td>
+                    <td class="col-md-2 h5">@receipt.IssuedOn.ToString("dd/MM/yyyy")</td>
+                    <td class="col-md-2 h5">$@(receipt.Total.ToString("F2"))</td>
+                    <td class="col-md-1 h5">@receipt.Records</td>
+                    <td class="col-md-3">
+                        @if (receipt.ReceiptStatus.Id == 2)
+                        {
+                            <a href="/Receipt/Details/@receipt.Id" class="btn btn-primary font-weight-bold">Details</a>
+                            <a href="/Delivery/Deliver/@receipt.Id" class="btn btn-primary font-weight-bold">Deliver</a>
+                        }
+                        else
+                        {
+                            <a href="/Receipt/Details/@receipt.Id" class="btn btn-primary font-weight-bold">Details</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

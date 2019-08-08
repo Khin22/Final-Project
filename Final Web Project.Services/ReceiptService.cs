@@ -24,13 +24,16 @@ namespace Final_Web_Project.Services
             this.orderService = orderService;
         }
 
-        public async Task<string> CreateReceipt(string recepientId)
+        public async Task<string> CreateReceipt(string recepientId, int receiptStatusId)
         {
             Receipt receipt = new Receipt
             {
                 IssuedOn = DateTime.UtcNow,
-                RecipientId = recepientId
+                RecipientId = recepientId,
+                ReceiptStatusId = receiptStatusId
             };
+
+            ReceiptStatus receiptStatus = new ReceiptStatus {Id = receipt.ReceiptStatusId};
 
             await this.orderService.SetOrdersToReceipt(receipt);
 

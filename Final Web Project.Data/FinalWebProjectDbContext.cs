@@ -23,6 +23,8 @@ namespace Final_Web_Project.Data
 
         public DbSet<DeliveryDetails> DeliveryDetails { get; set; }
 
+        public DbSet<ReceiptStatus> ReceiptStatuses { get; set; }
+
         public FinalWebProjectDbContext(DbContextOptions<FinalWebProjectDbContext> options) : base(options)
         {
 

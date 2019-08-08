@@ -17,5 +17,7 @@ namespace Final_Web_Project.Services.ServiceModels
         public string RecipientId { get; set; }
 
         public FinalWebProjectUserServiceModel Recipient { get; set; }
+
+        public ReceiptStatus ReceiptStatus { get; set; }
     }
 }

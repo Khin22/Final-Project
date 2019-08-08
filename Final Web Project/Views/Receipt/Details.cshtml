@@ -6,55 +6,55 @@
 }
 
 
-<h1 class="text-center">Receipt Details</h1>
-<hr class="hr-2 bg-primary w-50">
+<h3 class="text-center">Receipt Details</h3>
+<hr class="hr-2 bg-primary w-20">
 <div class="products-holder w-50 mx-auto">
     @foreach (var order in Model.Orders)
     {
         <div class="product d-flex justify-content-between">
             <div class="product-name w-75">
-                <h4>@order.RecordAlbumName</h4>
+                <h5>@order.RecordAlbumName</h5>
             </div>
             <div class="product-quantity-and-price d-flex justify-content-between w-25">
-                <h4 class="text-left w-50">x@(order.Quantity)</h4>
-                <h4 class="text-right w-50">$@(order.RecordPrice.ToString("F2"))</h4>
+                <h5 class="text-left w-50">x@(order.Quantity)</h5>
+                <h5 class="text-right w-50">$@(order.RecordPrice.ToString("F2"))</h5>
             </div>
         </div>
     }
 </div>
-<hr class="hr-2 bg-primary w-50">
+<hr class="hr-2 bg-primary w-20">
 <div class="finish-order-holder w-50 mx-auto d-flex justify-content-between">
     <div class="form-holder w-25">
-        <h3 class="text-left">Total</h3>
+        <h5 class="text-left">Total</h5>
     </div>
     <div class="price-holder w-25">
-        <h3 class="text-right">$@Model.Orders.Sum(order => order.RecordPrice * order.Quantity).ToString("F2")</h3>
+        <h5 class="text-right">$@Model.Orders.Sum(order => order.RecordPrice * order.Quantity).ToString("F2")</h5>
     </div>
 </div>
-<hr class="hr-2 bg-primary w-50">
+<hr class="hr-2 bg-primary w-20">
 <div class="finish-order-holder w-50 mx-auto d-flex justify-content-between">
     <div class="form-holder w-25">
-        <h3 class="text-left">Issued On</h3>
+        <h5 class="text-left">Issued On</h5>
     </div>
     <div class="price-holder w-25">
-        <h3 class="text-right">@Model.IssuedOn.ToString("dd/MM/yyyy")</h3>
+        <h5 class="text-right">@Model.IssuedOn.ToString("dd/MM/yyyy")</h5>
     </div>
 </div>
 <div class="finish-order-holder w-50 mx-auto d-flex justify-content-between">
     <div class="form-holder w-25">
-        <h3 class="text-left">Recipient</h3>
+        <h5 class="text-left">Recipient</h5>
     </div>
     <div class="price-holder w-25">
-        <h3 class="text-right">@Model.Recipient</h3>
+        <h5 class="text-right">@Model.Recipient</h5>
     </div>
 </div>
-<hr class="hr-2 bg-primary w-50">
+<hr class="hr-2 bg-primary w-20">
 <div class="finish-order-holder w-50 mx-auto d-flex justify-content-between">
     <div class="form-holder w-25">
-        <h3 class="text-left">Receipt</h3>
+        <h5 class="text-left">Receipt</h5>
     </div>
     <div class="price-holder w-75">
-        <h3 class="text-right">@Model.Id</h3>
+        <h5 class="text-right">@Model.Id</h5>
     </div>
 </div>
-<hr class="hr-2 bg-primary w-50">
+<hr class="hr-2 bg-primary w-20">

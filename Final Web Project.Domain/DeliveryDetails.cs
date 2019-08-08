@@ -19,5 +19,17 @@ namespace Final_Web_Project.Domain
         public string Country { get; set; }
 
         public string PhoneNumber { get; set; }
+
+        public string ReceiptId { get; set; }
+
+        public Receipt Receipt { get; set; }
+
+        public DateTime IssuedOn { get; set; }
+
+        public string RecipientId { get; set; }
+
+        public FinalWebProjectUser Recipient { get; set; }
+
+
     }
 }

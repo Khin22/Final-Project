@@ -23,23 +23,6 @@ namespace Final_Web_Project.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "DeliveryDetails",
-                columns: table => new
-                {
-                    Id = table.Column<string>(nullable: false),
-                    TwoNames = table.Column<string>(nullable: true),
-                    DeliveryAdderss = table.Column<string>(nullable: true),
-                    City = table.Column<string>(nullable: true),
-                    PostalCode = table.Column<string>(nullable: true),
-                    Country = table.Column<string>(nullable: true),
-                    PhoneNumber = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DeliveryDetails", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Genres",
                 columns: table => new
                 {
@@ -248,6 +231,30 @@ namespace Final_Web_Project.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "DeliveryDetails",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    TwoNames = table.Column<string>(nullable: true),
+                    DeliveryAdderss = table.Column<string>(nullable: true),
+                    City = table.Column<string>(nullable: true),
+                    PostalCode = table.Column<string>(nullable: true),
+                    Country = table.Column<string>(nullable: true),
+                    PhoneNumber = table.Column<string>(nullable: true),
+                    ReceiptId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DeliveryDetails", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_DeliveryDetails_Receipts_ReceiptId",
+                        column: x => x.ReceiptId,
+                        principalTable: "Receipts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Orders",
                 columns: table => new
                 {
@@ -331,6 +338,11 @@ namespace Final_Web_Project.Data.Migrations
                 name: "IX_AspNetUsers_UserRoleId",
                 table: "AspNetUsers",
                 column: "UserRoleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DeliveryDetails_ReceiptId",
+                table: "DeliveryDetails",
+                column: "ReceiptId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Genres_Name",

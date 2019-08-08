@@ -36,6 +36,17 @@ namespace Final_Web_Project.Services
             return result > 0;
         }
 
+        public async Task<bool> DeleteOrder(string orderId)
+        {
+            Order orderFromDb = await this.finalWebProjectDbContext.Orders
+                .SingleOrDefaultAsync(order => order.Id == orderId);
+
+            this.finalWebProjectDbContext.Remove(orderFromDb);
+            int result = await this.finalWebProjectDbContext.SaveChangesAsync();
+
+            return result > 0;
+        }
+
         public async Task<bool> CreateOrderAsync(OrderServiceModel orderServiceModel)
         {
             Order order = orderServiceModel.To<Order>();

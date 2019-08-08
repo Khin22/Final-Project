@@ -92,7 +92,7 @@ namespace Final_Web_Project.Services
 
             foreach (var item in recordsByGenreId)
             {
-                recordsByGenreId.First(records => records.GenreId == genre.Id).GenreId = 7;
+                recordsByGenreId.First(records => records.GenreId == genre.Id).GenreId = 3;
             }
 
             this.finalWebProjectDbContext.Genres.Remove(genre);
@@ -139,7 +139,10 @@ namespace Final_Web_Project.Services
         public async Task<bool> Delete(string id)
         {
             Record record = await this.finalWebProjectDbContext.Records.SingleOrDefaultAsync(records => records.Id == id);
+            Order order = await this.finalWebProjectDbContext.Orders.SingleOrDefaultAsync(orders => orders.RecordId == record.Id);
+            
 
+            this.finalWebProjectDbContext.Orders.Remove(order);
             this.finalWebProjectDbContext.Records.Remove(record);
 
             int result = await this.finalWebProjectDbContext.SaveChangesAsync();

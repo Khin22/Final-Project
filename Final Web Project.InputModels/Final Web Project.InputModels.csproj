@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Final Web Project.Services.Mapping\Final Web Project.Services.Mapping.csproj" />
     <ProjectReference Include="..\Final Web Project.Services\Final Web Project.Services.csproj" />
+    <ProjectReference Include="..\Final Web Project.ViewModels\Final Web Project.ViewModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>
