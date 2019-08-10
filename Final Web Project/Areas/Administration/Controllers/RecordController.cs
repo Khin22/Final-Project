@@ -18,12 +18,12 @@ namespace Final_Web_Project.Areas.Administration.Controllers
 {
     public class RecordController : AdminController
     {
-        private readonly IRecordSerice recordSerice;
+        private readonly IRecordService recordService;
         private readonly ICloudinaryService cloudinaryService;
 
-        public RecordController(IRecordSerice recordSerice, ICloudinaryService cloudinaryService)
+        public RecordController(IRecordService recordService, ICloudinaryService cloudinaryService)
         {
-            this.recordSerice = recordSerice;
+            this.recordService = recordService;
             this.cloudinaryService = cloudinaryService;
         }
 
@@ -48,7 +48,7 @@ namespace Final_Web_Project.Areas.Administration.Controllers
                 Name = genreTypeCreateInputModel.Name
             };
 
-            await this.recordSerice.CreateGenre(genreServiceModel);
+            await this.recordService.CreateGenre(genreServiceModel);
 
             return this.Redirect("/");
         }
@@ -57,14 +57,14 @@ namespace Final_Web_Project.Areas.Administration.Controllers
         [Route("/Administration/Record/Genre/Delete")]
         public async Task<IActionResult> DeleteGenre()
         {
-            GenreDeleteViewModel genreDeleteModel = (await this.recordSerice.GetAllGenres().FirstAsync()).To<GenreDeleteViewModel>();
+            GenreDeleteViewModel genreDeleteModel = (await this.recordService.GetAllGenres().FirstAsync()).To<GenreDeleteViewModel>();
 
             if (genreDeleteModel == null)
             {
                 return this.Redirect("/");
             }
 
-            var allGenres = await this.recordSerice.GetAllGenres().ToListAsync();
+            var allGenres = await this.recordService.GetAllGenres().ToListAsync();
 
             this.ViewData["types"] = allGenres.Select(genre => new GenreDeleteViewModel
             {
@@ -81,7 +81,7 @@ namespace Final_Web_Project.Areas.Administration.Controllers
         public async Task<IActionResult> DeletedGenre(string name)
         {
 
-            await this.recordSerice.DeleteGenre(name);
+            await this.recordService.DeleteGenre(name);
 
             return this.Redirect("/");
         }
@@ -89,7 +89,7 @@ namespace Final_Web_Project.Areas.Administration.Controllers
         [HttpGet(Name = "Create")]
         public async Task<IActionResult> Create()
         {
-            var allGenres = await this.recordSerice.GetAllGenres().ToListAsync();
+            var allGenres = await this.recordService.GetAllGenres().ToListAsync();
 
             this.ViewData["types"] = allGenres.Select(genre => new GenreCreateViewModel
             {
@@ -106,7 +106,7 @@ namespace Final_Web_Project.Areas.Administration.Controllers
         {
             if (!this.ModelState.IsValid)
             {
-                var allGenres = await this.recordSerice.GetAllGenres().ToListAsync();
+                var allGenres = await this.recordService.GetAllGenres().ToListAsync();
 
                 this.ViewData["types"] = allGenres.Select(genre => new GenreCreateViewModel
                 {
@@ -123,7 +123,7 @@ namespace Final_Web_Project.Areas.Administration.Controllers
 
             recordCreate.Picture = pictureUrl;
 
-            await this.recordSerice.Create(recordCreate);
+            await this.recordService.Create(recordCreate);
 
             return this.Redirect("/");
         }
@@ -131,7 +131,7 @@ namespace Final_Web_Project.Areas.Administration.Controllers
         [HttpGet(Name = "Edit")]
         public async Task<IActionResult> Edit(string id)
         {
-            RecordEditInputModel recordEditInputModel = (await this.recordSerice.GetById(id)).To<RecordEditInputModel>();
+            RecordEditInputModel recordEditInputModel = (await this.recordService.GetById(id)).To<RecordEditInputModel>();
 
             if (recordEditInputModel == null)
             {
@@ -139,7 +139,7 @@ namespace Final_Web_Project.Areas.Administration.Controllers
                 return this.Redirect("/");
             }
 
-            var allGenres = await this.recordSerice.GetAllGenres().ToListAsync();
+            var allGenres = await this.recordService.GetAllGenres().ToListAsync();
 
             this.ViewData["types"] = allGenres.Select(genre => new GenreCreateViewModel
             {
@@ -156,7 +156,7 @@ namespace Final_Web_Project.Areas.Administration.Controllers
         {
             if (!this.ModelState.IsValid)
             {
-                var allGenres = await this.recordSerice.GetAllGenres().ToListAsync();
+                var allGenres = await this.recordService.GetAllGenres().ToListAsync();
 
                 this.ViewData["types"] = allGenres.Select(genre => new GenreCreateViewModel
                 {
@@ -173,7 +173,7 @@ namespace Final_Web_Project.Areas.Administration.Controllers
 
             recordCreate.Picture = pictureUrl;
 
-            await this.recordSerice.Edit(id, recordCreate);
+            await this.recordService.Edit(id, recordCreate);
 
             return this.Redirect("/");
         }
@@ -181,7 +181,7 @@ namespace Final_Web_Project.Areas.Administration.Controllers
         [HttpGet(Name = "Delete")]
         public async Task<IActionResult> Delete(string id)
         {
-            RecordDeleteViewModel recordDeleteModel = (await this.recordSerice.GetById(id)).To<RecordDeleteViewModel>();
+            RecordDeleteViewModel recordDeleteModel = (await this.recordService.GetById(id)).To<RecordDeleteViewModel>();
 
             if (recordDeleteModel == null)
             {
@@ -189,7 +189,7 @@ namespace Final_Web_Project.Areas.Administration.Controllers
                 return this.Redirect("/");
             }
 
-            var allGenres = await this.recordSerice.GetAllGenres().ToListAsync();
+            var allGenres = await this.recordService.GetAllGenres().ToListAsync();
 
             this.ViewData["types"] = allGenres.Select(genre => new GenreDeleteViewModel
             {
@@ -205,7 +205,7 @@ namespace Final_Web_Project.Areas.Administration.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Deleted(string id)
         {
-            await this.recordSerice.Delete(id);
+            await this.recordService.Delete(id);
 
             return this.Redirect("/");
         }

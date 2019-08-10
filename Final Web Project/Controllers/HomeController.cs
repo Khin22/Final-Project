@@ -13,11 +13,11 @@ namespace Final_Web_Project.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IRecordSerice recordSerice;
+        private readonly IRecordService recordService;
 
-        public HomeController(IRecordSerice recordSerice)
+        public HomeController(IRecordService recordService)
         {
-            this.recordSerice = recordSerice;
+            this.recordService = recordService;
         }
 
         
@@ -25,7 +25,7 @@ namespace Final_Web_Project.Controllers
         {
             if (this.User.Identity.IsAuthenticated)
             {
-                List<RecordHomeViewModel> records = await this.recordSerice.GetAllRecords(ordering)
+                List<RecordHomeViewModel> records = await this.recordService.GetAllRecords(ordering)
                     .Select(record => new RecordHomeViewModel
                     {
                         Id = record.Id,

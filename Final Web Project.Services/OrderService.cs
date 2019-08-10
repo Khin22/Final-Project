@@ -25,7 +25,10 @@ namespace Final_Web_Project.Services
             Order orderFromDb = await this.finalWebProjectDbContext.Orders
                 .SingleOrDefaultAsync(order => order.Id == orderId);
 
-            // TODO: Validate that the requested order is existent and with status - "Active"
+            if (orderFromDb == null || orderFromDb.Status.Name != "Active")
+            {
+                throw new ArgumentException(nameof(orderFromDb));
+            }
 
             orderFromDb.Status = await this.finalWebProjectDbContext.OrderStatuses
                 .SingleOrDefaultAsync(orderStatus => orderStatus.Name == "Completed");

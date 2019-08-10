@@ -15,12 +15,12 @@ namespace Final_Web_Project.Controllers
 {
     public class RecordController : Controller
     {
-        private readonly IRecordSerice recordSerice;
+        private readonly IRecordService recordService;
         private readonly IOrderService orderService;
 
-        public RecordController(IRecordSerice recordSerice, IOrderService orderService)
+        public RecordController(IRecordService recordService, IOrderService orderService)
         {
-            this.recordSerice = recordSerice;
+            this.recordService = recordService;
             this.orderService = orderService;
         }
 
@@ -28,7 +28,7 @@ namespace Final_Web_Project.Controllers
         public async Task<IActionResult> Details(string id)
         {
             RecordDetailsViewModel recordDetails = (await 
-                this.recordSerice.GetById(id)).To<RecordDetailsViewModel>();
+                this.recordService.GetById(id)).To<RecordDetailsViewModel>();
 
             return View(recordDetails);
         }

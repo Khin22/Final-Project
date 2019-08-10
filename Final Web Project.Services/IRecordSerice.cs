@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Final_Web_Project.Services
 {
-    public interface IRecordSerice
+    public interface IRecordService
     {
         IQueryable<GenreServiceModel> GetAllGenres();
 

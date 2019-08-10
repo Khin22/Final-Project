@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Final_Web_Project.Services
 {
-    public class RecordService : IRecordSerice
+    public class RecordService : IRecordService
     {
         private const string PriceAscendingCase = "price-lowest-to-highest";
         private const string PriceDescendingCase = "price-highest-to-lowest";
@@ -140,9 +140,12 @@ namespace Final_Web_Project.Services
         {
             Record record = await this.finalWebProjectDbContext.Records.SingleOrDefaultAsync(records => records.Id == id);
             Order order = await this.finalWebProjectDbContext.Orders.SingleOrDefaultAsync(orders => orders.RecordId == record.Id);
-            
 
-            this.finalWebProjectDbContext.Orders.Remove(order);
+            if (order != null)
+            {
+                this.finalWebProjectDbContext.Orders.Remove(order);
+            }
+
             this.finalWebProjectDbContext.Records.Remove(record);
 
             int result = await this.finalWebProjectDbContext.SaveChangesAsync();
