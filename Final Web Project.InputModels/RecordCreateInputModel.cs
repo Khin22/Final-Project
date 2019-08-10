@@ -10,12 +10,14 @@ namespace Final_Web_Project.InputModels
     public class RecordCreateInputModel : IMapTo<RecordServiceModel>, IHaveCustomMappings
     {
         [Required]
+        [Display(Name = "Album Name")]
         public string AlbumName { get; set; }
 
         [Required]
         public string Artist { get; set; }
 
         [Required]
+        [Display(Name = "Date Produced")]
         public DateTime DateProduced { get; set; }
 
         [Required]

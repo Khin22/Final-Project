@@ -11,9 +11,11 @@ namespace Final_Web_Project.Domain
         public string Id { get; set; }
 
         [Required]
+        [Display(Name = "Album Name")]
         public string AlbumName { get; set; }
 
         [Required]
+        [Display(Name = "Date Produced")]
         public DateTime DateProduced { get; set; }
 
         [Required]
